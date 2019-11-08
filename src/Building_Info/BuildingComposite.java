@@ -16,10 +16,50 @@ public class BuildingComposite extends BuildingComponent {
     }
 
     @Override
-    public void GetSurface() {
-        System.out.println(super.getName() + " GetSurface:");
+    public float GetSurface() {
+        float sum=0;
         for (BuildingComponent component : buildingComponents) {
-            component.GetSurface();
+            sum+=component.GetSurface();
         }
+        return sum;
+    }
+
+    public  int GetLampWattage(){
+        int sum=0;
+        for (BuildingComponent component : buildingComponents)
+             sum+=component.GetLampWattage();
+        return sum;
+    }
+
+    public  float GetCubature(){
+        float sum=0;
+        for (BuildingComponent component : buildingComponents)
+            sum+=component.GetCubature();
+        return sum;
+    }
+
+    @Override
+    public float GetHeating() {
+        float sum=0;
+        for (BuildingComponent component : buildingComponents)
+            sum+=component.GetHeating();
+        return sum;
+    }
+
+    public  float LampPerMeter2(){
+        return this.GetLampWattage()/this.GetSurface();
+    }
+
+    @Override
+    public float HeatPerMeter3() {
+        return this.GetHeating()/this.GetCubature();
+    }
+
+    public String UsesMoreHeatThan(float maxLevel){
+        String useMoreHeat="Id Name\n";
+        for (BuildingComponent component : buildingComponents)
+            if (component.HeatPerMeter3()>maxLevel)
+                useMoreHeat=useMoreHeat+component.getIdx()+" "+component.getName()+"\n";
+        return useMoreHeat;
     }
 }

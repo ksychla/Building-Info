@@ -9,7 +9,13 @@ public abstract class BuildingComponent {
         this.name = name;
     }
 
-    public abstract void GetSurface();
+    public abstract float GetSurface();
+    public abstract int GetLampWattage();
+    public abstract float GetCubature();
+    public abstract float GetHeating();
+    public abstract float LampPerMeter2();
+    public abstract float HeatPerMeter3();
+
 
     public int getIdx() {
         return idx;
