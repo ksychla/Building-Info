@@ -3,9 +3,9 @@ package Building_Info;
 public class Room extends BuildingComponent{
     private float surface;
     private int lampWattage;
-    private int cubature;
+    private float cubature;
 
-    public Room(int idx, String name, float surface, int lampWattage, int cubature) {
+    public Room(int idx, String name, float surface, int lampWattage, float cubature) {
         super(idx, name);
         this.surface = surface;
         this.lampWattage = lampWattage;
