@@ -6,7 +6,7 @@ public class Room extends BuildingComponent{
     private float cubature;
     private float heating;
 
-    public Room(int idx, String name, float surface, int lampWattage, int cubature) {
+    public Room(int idx, String name, float surface, int lampWattage, float cubature) {
         super(idx, name);
         this.surface = surface;
         this.lampWattage = lampWattage;
