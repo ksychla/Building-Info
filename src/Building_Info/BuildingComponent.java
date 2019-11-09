@@ -9,7 +9,13 @@ public abstract class BuildingComponent {
         this.name = name;
     }
 
-    public abstract void GetSurface();
+    public abstract float GetSurface();
+    public abstract int GetLampWattage();
+    public abstract float GetCubature();
+    public abstract float GetHeating();
+    public abstract float LampPerMeter2();
+    public abstract float HeatPerMeter3();
+
 
     public int getIdx() {
         return idx;
@@ -43,5 +49,12 @@ public abstract class BuildingComponent {
         budynek.AddChild(pietro4);
 
         return budynek;
+    }
+    public void printInfo(){
+        System.out.println("Name: "+getName());
+        System.out.println("Surface: "+GetSurface());
+        System.out.println("Cubature: "+GetCubature());
+        System.out.println("Lamp per m^2: "+LampPerMeter2());
+        System.out.println("Heat per m^3: "+HeatPerMeter3());
     }
 }

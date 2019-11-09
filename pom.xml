@@ -1,0 +1,77 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
+	http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>building</groupId>
+	<artifactId>BuildingInfo</artifactId>
+	<packaging>jar</packaging>
+	<version>1.0</version>
+	<name>BuildingInfo</name>
+	
+	<build>
+		<finalName>BuildingInfo</finalName>
+		<plugins>
+			<!--use mvn jar:jar when building to dump a jar file to the target location-->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+				<version>3.2.0</version>
+				<configuration>
+					  <archive>
+						<manifest>
+							<!--jar entry class-->
+							<mainClass>Main</mainClass>
+						</manifest>
+					  </archive>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+	<properties>
+  		<maven.compiler.target>1.8</maven.compiler.target>
+  		<maven.compiler.source>1.8</maven.compiler.source>
+	</properties>
+	
+	<dependencies>
+		<!--no unit tests available yet, but putting it here just in case-->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.12</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.google.code.gson</groupId>
+			<artifactId>gson</artifactId>
+			<version>2.8.5</version>
+		</dependency>
+
+	</dependencies>
+	
+	<reporting>
+		<plugins>
+			<!--dumping the site into the target location-->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-site-plugin</artifactId>
+				<version>3.3</version>
+			</plugin>
+			<!--reports-->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-project-info-reports-plugin</artifactId>
+				<version>2.7</version>
+			</plugin>
+			<!--preps for the java doc-->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-javadoc-plugin</artifactId>
+				<version>3.1.1</version>
+			</plugin>
+		</plugins>
+	</reporting>
+
+
+</project>
