@@ -5,7 +5,6 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>building</groupId>
 	<artifactId>BuildingInfo</artifactId>	
-	<packaging>war</packaging>
 	<version>1.0</version>
 	<name>BuildingInfo</name>
 	
@@ -40,12 +39,6 @@
 	</properties>
 	
 	<dependencies>
-		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-			<version>4.12</version>
-			<scope>test</scope>
-		</dependency>
 	</dependencies>
 	
 	<reporting>
