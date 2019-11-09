@@ -50,4 +50,11 @@ public abstract class BuildingComponent {
 
         return budynek;
     }
+    public void printInfo(){
+        System.out.println("Name: "+getName());
+        System.out.println("Surface: "+GetSurface());
+        System.out.println("Cubature: "+GetCubature());
+        System.out.println("Lamp per m^2: "+LampPerMeter2());
+        System.out.println("Heat per m^3: "+HeatPerMeter3());
+    }
 }

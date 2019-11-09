@@ -8,7 +8,7 @@ public class BuildingComposite extends BuildingComponent {
 
     public BuildingComposite(int idx, String name) {
         super(idx, name);
-        buildingComponents = new ArrayList<>();
+            buildingComponents = new ArrayList<>();
     }
 
     public void AddChild(BuildingComponent buildingComponent) {
