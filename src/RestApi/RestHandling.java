@@ -9,7 +9,7 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.core.Response;
 
 @Path("/building")
-public class RestHandling {
+public class RestHandling{
 
     @GET
     @Path("{id}/surface")
@@ -114,6 +114,12 @@ public class RestHandling {
         BuildingComponent building = jsonParser.loadJson(id.toString()+".json");
 //        TODO
         return Response.ok(String.valueOf(building.GetLampWattage())).build();
+    }
+
+    @GET
+    @Path("/test")
+    public Response testRest(){
+        return Response.ok("Test").build();
     }
 
 }
