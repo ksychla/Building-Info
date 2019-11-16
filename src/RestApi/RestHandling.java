@@ -3,13 +3,18 @@ package RestApi;
 import Building_Info.BuildingComponent;
 import Utils.JsonParser;
 
+import javax.servlet.http.HttpServlet;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.core.Response;
 
+//  TODO:   Handling exceptions,
+//          better tree composition
+//          general bug fix
+
 @Path("/building")
-public class RestHandling{
+public class RestHandling extends HttpServlet {
 
     @GET
     @Path("{id}/surface")
