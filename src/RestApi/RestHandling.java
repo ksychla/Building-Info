@@ -46,7 +46,7 @@ public class RestHandling extends HttpServlet {
     public Response getHeatingBuilding(@PathParam("id") Integer id){
         try {
             BuildingComponent building = jsonParser.loadJson(id.toString() + ".json");
-            return Response.ok(String.valueOf(building.GetHeating())).build();
+            return Response.ok(String.valueOf(building.HeatPerMeter3())).build();
         }catch(Exception e){
             return Response.status(Response.Status.NOT_FOUND).build();
         }
@@ -57,7 +57,7 @@ public class RestHandling extends HttpServlet {
     public Response getLampWattageBuilding(@PathParam("id") Integer id){
         try {
             BuildingComponent building = jsonParser.loadJson(id.toString() + ".json");
-            return Response.ok(String.valueOf(building.GetLampWattage())).build();
+            return Response.ok(String.valueOf(building.LampPerMeter2())).build();
         }catch(Exception e){
             return Response.status(Response.Status.NOT_FOUND).build();
         }
