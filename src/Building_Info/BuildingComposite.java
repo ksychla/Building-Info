@@ -12,6 +12,15 @@ public class BuildingComposite extends BuildingComponent {
             buildingComponents = new ArrayList<>();
     }
 
+    public BuildingComponent getComponentById(int id){
+        for(BuildingComponent component : buildingComponents){
+            if(component.getIdx() == id){
+                return component;
+            }
+        }
+        return null;
+    }
+
     public int GetChildCount(){
         return buildingComponents.size();
     }

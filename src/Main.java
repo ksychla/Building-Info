@@ -11,14 +11,6 @@ import org.glassfish.jersey.servlet.ServletContainer;
  */
 public class Main {
     public static void main(String[] args){
-//        BuildingComponent building = BuildingComponent.GetExamplaryBuilding();
-        BuildingComponent test;
-        JsonParser parser = new JsonParser();
-//
-//        parser.saveJson(building, "building.json");
-        test = parser.loadJson("building.json");
-
-        test.printInfo();
 
         Server server = new Server(8080);
         ServletContextHandler context = new ServletContextHandler(ServletContextHandler.NO_SESSIONS);
