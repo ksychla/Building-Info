@@ -2,26 +2,28 @@ package RestApi;
 
 import Building_Info.BuildingComponent;
 import Building_Info.BuildingComposite;
-import Building_Info.Room;
 import Utils.JsonParser;
 
 import javax.servlet.http.HttpServlet;
-import javax.ws.rs.GET;
-import javax.ws.rs.POST;
-import javax.ws.rs.Path;
-import javax.ws.rs.PathParam;
+import javax.ws.rs.*;
 import javax.ws.rs.core.Response;
+import java.io.*;
 
-//  TODO:   Handling exceptions,
-//          better tree composition
-//          general bug fix
-//          POST json (create building)
 
+/**
+ *  Klasa obsługująca REST api
+ */
 @Path("/building")
 public class RestHandling extends HttpServlet {
 
     private JsonParser jsonParser = new JsonParser();
 
+    /**
+     * Funkcja podająca łączną powierzchnię budynku
+     *
+     * @param id numer identyfikujący budynek
+     * @return  Status wykonanej operacji
+     */
     @GET
     @Path("{id}/surface")
     public Response getSurfaceBuilding(@PathParam("id") Integer id){
@@ -33,6 +35,12 @@ public class RestHandling extends HttpServlet {
         }
     }
 
+    /**
+     * Funkcja podająca łączną kubaturę budynku
+     *
+     * @param id numer identyfikujący budynek
+     * @return Status wykonanej operacji
+     */
     @GET
     @Path("{id}/cubature")
     public Response getCubatureBuilding(@PathParam("id") Integer id){
@@ -44,6 +52,12 @@ public class RestHandling extends HttpServlet {
         }
     }
 
+    /**
+     * Funkcja podająca zużycie energii na ogrzewanie budynku
+     *
+     * @param id numer identyfikujący budynek
+     * @return Status wykonanej operacji
+     */
     @GET
     @Path("{id}/heating")
     public Response getHeatingBuilding(@PathParam("id") Integer id){
@@ -55,6 +69,12 @@ public class RestHandling extends HttpServlet {
         }
     }
 
+    /**
+     * Funkcja podająca moc oświetlenia na powierzchnię w budynku
+     *
+     * @param id numer identyfikujący budynek
+     * @return Status wykonanej operacji
+     */
     @GET
     @Path("{id}/wattage")
     public Response getLampWattageBuilding(@PathParam("id") Integer id){
@@ -66,38 +86,90 @@ public class RestHandling extends HttpServlet {
         }
     }
 
+    /**
+     * Funkcja podająca łączną powierzchnię piętra
+     *
+     * @param id numer identyfikujący budynek
+     * @param floorId numer identyfikujący piętro
+     * @return Status wykonanej operacji
+     */
     @GET
     @Path("{id}/floorId/{floorId}/surface")
     public Response getSurfaceFloor(@PathParam("id") Integer id, @PathParam("floorId") int floorId){
-        BuildingComposite building = (BuildingComposite) jsonParser.loadJson(id.toString()+".json");
-        BuildingComponent floor = building.getComponentById(floorId);
-        return Response.ok(String.valueOf(floor.GetSurface())).build();
+        try {
+            BuildingComposite building = (BuildingComposite) jsonParser.loadJson(id.toString() + ".json");
+            BuildingComponent floor = building.getComponentById(floorId);
+            return Response.ok(String.valueOf(floor.GetSurface())).build();
+        }catch(Exception e){
+            return Response.status(Response.Status.NOT_FOUND).build();
+        }
     }
 
+    /**
+     * Funkcja podająca łączną kubaturę piętra
+     *
+     * @param id numer identyfikujący budynek
+     * @param floorId numer identyfikujący piętro
+     * @return Status wykonanej operacji
+     */
     @GET
     @Path("{id}/floorId/{floorId}/cubature")
     public Response getCubatureFloor(@PathParam("id") Integer id, @PathParam("floorId") int floorId){
-        BuildingComposite building = (BuildingComposite) jsonParser.loadJson(id.toString()+".json");
-        BuildingComponent floor = building.getComponentById(floorId);
-        return Response.ok(String.valueOf(floor.GetCubature())).build();
+        try {
+            BuildingComposite building = (BuildingComposite) jsonParser.loadJson(id.toString() + ".json");
+            BuildingComponent floor = building.getComponentById(floorId);
+            return Response.ok(String.valueOf(floor.GetCubature())).build();
+        }catch (Exception e){
+            return Response.status(Response.Status.NOT_FOUND).build();
+        }
     }
 
+    /**
+     * Funkcja podająca zużycie energii na piętro
+     *
+     * @param id numer identyfikujący budynek
+     * @param floorId numer identyfikujący piętro
+     * @return Status wykonanej operacji
+     */
     @GET
     @Path("{id}/floorId/{floorId}/heating")
     public Response getHeatingFloor(@PathParam("id") Integer id, @PathParam("floorId") int floorId){
-        BuildingComposite building = (BuildingComposite) jsonParser.loadJson(id.toString()+".json");
-        BuildingComponent floor = building.getComponentById(floorId);
-        return Response.ok(String.valueOf(floor.GetHeating())).build();
+        try {
+            BuildingComposite building = (BuildingComposite) jsonParser.loadJson(id.toString() + ".json");
+            BuildingComponent floor = building.getComponentById(floorId);
+            return Response.ok(String.valueOf(floor.GetHeating())).build();
+        }catch (Exception e){
+            return Response.status(Response.Status.NOT_FOUND).build();
+        }
     }
 
+    /**
+     * Funckja podająca moc oświetlenia na powierzchnię na piętrze
+     *
+     * @param id numer identyfikujący budynek
+     * @param floorId numer identyfikujący piętro
+     * @return Status wykonanej operacji
+     */
     @GET
     @Path("{id}/floorId/{floorId}/wattage")
     public Response getLampWattageFloor(@PathParam("id") Integer id, @PathParam("floorId") int floorId){
-        BuildingComposite building = (BuildingComposite) jsonParser.loadJson(id.toString()+".json");
-        BuildingComponent floor = building.getComponentById(floorId);
-        return Response.ok(String.valueOf(floor.GetLampWattage())).build();
+        try {
+            BuildingComposite building = (BuildingComposite) jsonParser.loadJson(id.toString() + ".json");
+            BuildingComponent floor = building.getComponentById(floorId);
+            return Response.ok(String.valueOf(floor.GetLampWattage())).build();
+        }catch (Exception e){
+            return Response.status(Response.Status.NOT_FOUND).build();
+        }
     }
 
+    /**
+     * Funkcja podająca powierzchnię pomieszczenia
+     *
+     * @param id numer identyfikujący budynek
+     * @param floorId numer identyfikujący piętro
+     * @param roomId numer identyfikujący pokój
+     * @return Status wykonanej operacji
+     */
     @GET
     @Path("{id}/floorId/{floorId}/roomId/{roomId}/surface")
     public Response getSurfaceRoom(@PathParam("id") Integer id, @PathParam("floorId") int floorId, @PathParam("roomId") int roomId){
@@ -112,6 +184,14 @@ public class RestHandling extends HttpServlet {
 
     }
 
+    /**
+     * Funkcja podająca kubaturę pomieszczenia
+     *
+     * @param id numer identyfikujący budynek
+     * @param floorId numer identyfikujący piętro
+     * @param roomId numer identyfikujący pokój
+     * @return Status wykonanej operacji
+     */
     @GET
     @Path("{id}/floorId/{floorId}/roomId/{roomId}/cubature")
     public Response getCubatureRoom(@PathParam("id") Integer id, @PathParam("floorId") int floorId, @PathParam("roomId") int roomId){
@@ -125,6 +205,14 @@ public class RestHandling extends HttpServlet {
         }
     }
 
+    /**
+     * Funkcja podająca zużycie energii na pomieszczenie
+     *
+     * @param id numer identyfikujący budynek
+     * @param floorId numer identyfikujący piętro
+     * @param roomId numer identyfikujący pokój
+     * @return Status wykonanej operacji
+     */
     @GET
     @Path("{id}/floorId/{floorId}/roomId/{roomId}/heating")
     public Response getHeatingRoom(@PathParam("id") Integer id, @PathParam("floorId") int floorId, @PathParam("roomId") int roomId){
@@ -138,6 +226,14 @@ public class RestHandling extends HttpServlet {
         }
     }
 
+    /**
+     * Funckja podająca moc oświetlenia na powierzchnię w pomieszczeniu
+     *
+     * @param id numer identyfikujący budynek
+     * @param floorId numer identyfikujący piętro
+     * @param roomId numer identyfikujący pokój
+     * @return Status wykonanej operacji
+     */
     @GET
     @Path("{id}/floorId/{floorId}/roomId/{roomId}/wattage")
     public Response getLampWattageRoom(@PathParam("id") Integer id, @PathParam("floorId") int floorId, @PathParam("roomId") int roomId){
@@ -151,23 +247,23 @@ public class RestHandling extends HttpServlet {
         }
     }
 
+    /**
+     * Funkcja tworząca nowy budynek w systemie przez metodę POST
+     *
+     * @param string plik json w postaci ciagu znaków otrzymany przez metodę POST
+     * @return Status wykonanej operacji
+     */
     @POST
-    @Path("create")
-    public Response postBuilding(){
-        try {
-            BuildingComposite budynek = new BuildingComposite(1, "Budynek");
-            BuildingComposite pietro1 = new BuildingComposite(2, "Pietro1");
-            pietro1.AddChild(new Room(3, "Poko1", 10, 10, 10));
-            pietro1.AddChild(new Room(4, "Poko1", 10, 10, 10));
-            budynek.AddChild(pietro1);
-            jsonParser.saveJson(budynek, "2.json");
-            return Response.ok("").build();
+    public Response postBuilding(String string){
+        try{
+            jsonParser.saveFromString(string);
+        }catch (IOException e){
+            e.printStackTrace();
         }catch (Exception e){
-            System.out.println(e);
-            return Response.status(Response.Status.NOT_FOUND).build();
+            e.printStackTrace();
+            return Response.status(Response.Status.METHOD_NOT_ALLOWED).build();
         }
-
-
+        return Response.ok("Upload complete").build();
     }
 
 }
