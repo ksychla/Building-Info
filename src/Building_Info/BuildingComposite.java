@@ -1,6 +1,7 @@
 package Building_Info;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class BuildingComposite extends BuildingComponent {
 
@@ -8,7 +9,24 @@ public class BuildingComposite extends BuildingComponent {
 
     public BuildingComposite(int idx, String name) {
         super(idx, name);
-        buildingComponents = new ArrayList<>();
+            buildingComponents = new ArrayList<>();
+    }
+
+    public BuildingComponent getComponentById(int id){
+        for(BuildingComponent component : buildingComponents){
+            if(component.getIdx() == id){
+                return component;
+            }
+        }
+        return null;
+    }
+
+    public int GetChildCount(){
+        return buildingComponents.size();
+    }
+
+    BuildingComponent GetLastChild(){
+        return buildingComponents.get(buildingComponents.size() - 1);
     }
 
     public void AddChild(BuildingComponent buildingComponent) {
