@@ -15,6 +15,11 @@ public class BuildingComposite extends BuildingComponent {
         buildingComponents.add(buildingComponent);
     }
 
+    /**
+     *Calculates the surface of a composite
+     * @return surface
+     */
+
     @Override
     public float GetSurface() {
         float sum=0;
@@ -24,6 +29,10 @@ public class BuildingComposite extends BuildingComponent {
         return sum;
     }
 
+    /**
+     *Calculates the wattage of a composite
+     * @return wattage
+     */
     public  int GetLampWattage(){
         int sum=0;
         for (BuildingComponent component : buildingComponents)
@@ -31,6 +40,10 @@ public class BuildingComposite extends BuildingComponent {
         return sum;
     }
 
+    /**
+     *Calculates the cubature of a composite
+     * @return cubature
+     */
     public  float GetCubature(){
         float sum=0;
         for (BuildingComponent component : buildingComponents)
@@ -38,6 +51,10 @@ public class BuildingComposite extends BuildingComponent {
         return sum;
     }
 
+    /**
+     *Calculates the heating of a composite
+     * @return heating
+     */
     @Override
     public float GetHeating() {
         float sum=0;
@@ -46,15 +63,28 @@ public class BuildingComposite extends BuildingComponent {
         return sum;
     }
 
+    /**
+     *Calculates the wattage per square meter of a composite
+     * @return wattage/m2
+     */
     public  float LampPerMeter2(){
         return this.GetLampWattage()/this.GetSurface();
     }
 
+    /**
+     *Calculates the heating per cubic meter of a composite
+     * @return heat/m3
+     */
     @Override
     public float HeatPerMeter3() {
         return this.GetHeating()/this.GetCubature();
     }
 
+    /**
+     *Looks for parts of composite which uses more than maxLevel heat per m3
+     * @param maxLevel higher values than maxLevel will be shown
+     * @return string with components ids and names
+     */
     public String UsesMoreHeatThan(float maxLevel){
         String useMoreHeat="Id Name\n";
         for (BuildingComponent component : buildingComponents)
