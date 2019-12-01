@@ -6,7 +6,17 @@ import com.google.gson.GsonBuilder;
 
 import java.io.*;
 
+/**
+ *  Klasa obsługująca serializację do i z plików .json
+ */
 public class JsonParser {
+
+    /**
+     * Funckja serializująca obiekt budynku do pliku .json
+     *
+     * @param building Objekt budynku, który ma być serializowany
+     * @param json_name Nazwa pliku .json
+     */
     public void saveJson(BuildingComponent building, String json_name){
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
         try {
@@ -19,6 +29,13 @@ public class JsonParser {
             e.printStackTrace();
         }
     }
+
+    /**
+     * Funckja deserializująca plik .json do obiektu budynku
+     *
+     * @param json_name Nazwa pliku .json
+     * @return Obiekt budynku
+     */
     public BuildingComponent loadJson(String json_name){
         Gson gson = new GsonBuilder().registerTypeAdapter(BuildingComponent.class, new BuildingDeserializer()).create();
         BuildingComponent building = null;

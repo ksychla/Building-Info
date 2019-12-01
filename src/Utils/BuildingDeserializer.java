@@ -8,7 +8,16 @@ import com.google.gson.*;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 
+/**
+ *  Klasa pomocnicza nadpisująca serializator w klasie JsonParser
+ */
 public class BuildingDeserializer implements JsonDeserializer<BuildingComponent> {
+
+    /**
+     * Funckja nadpisująca domyślny serializator
+     *
+     * @return Obiekt zdeserializowanego budynku
+     */
     @Override
     public BuildingComposite deserialize(JsonElement json, Type typeOfT, JsonDeserializationContext context)
             throws JsonParseException {
