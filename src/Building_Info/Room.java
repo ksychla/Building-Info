@@ -15,8 +15,8 @@ public class Room extends BuildingComponent{
     }
 
     /**
-     *Calculates the surface of a room
-     * @return surface
+     *Zwraca powierzchnię pokoju
+     * @return powierzchnia
      */
     @Override
     public float GetSurface() {
@@ -24,40 +24,40 @@ public class Room extends BuildingComponent{
     }
 
     /**
-     *Calculates the lamp wattage of a room
-     * @return wattage
+     *Zwraca oświetlenie pokoju
+     * @return waty
      */
     public int GetLampWattage(){
         return lampWattage;
     }
 
     /**
-     *Calculates the cubature of a room
-     * @return cubature
+     *Zwraca kubaturę pokoju
+     * @return kubatura
      */
     public float GetCubature(){
         return cubature;
     }
 
     /**
-     *Calculates the heating of a room
-     * @return heating
+     *Zwraca ilość ciepła potrzebną do ogrzania pokoju
+     * @return ciepło
      */
     public float GetHeating(){
         return heating;
     }
 
     /**
-     *Calculates the lamp wattage per square meter of a room
-     * @return wattage/m2
+     *Oblicza ilość oświetlenia w przeliczeniu na m3
+     * @return wat/m2
      */
     public float LampPerMeter2(){
         return lampWattage/surface;
     }
 
     /**
-     *Calculates the heating per cubic meter of a room
-     * @return heating/m3
+     *Oblicza ilość ciepła do ogrzania w przeliczeniu na m3
+     * @return ciepło/m3
      */
     public float HeatPerMeter3(){
         return heating/cubature;

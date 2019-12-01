@@ -34,8 +34,8 @@ public class BuildingComposite extends BuildingComponent {
     }
 
     /**
-     *Calculates the surface of a composite
-     * @return surface
+     *Oblicza powierzchnię kompozytu
+     * @return powierzchnia
      */
 
     @Override
@@ -48,8 +48,8 @@ public class BuildingComposite extends BuildingComponent {
     }
 
     /**
-     *Calculates the wattage of a composite
-     * @return wattage
+     *Oblicza iloś oświetlenia kompozytu
+     * @return waty
      */
     public  int GetLampWattage(){
         int sum=0;
@@ -59,8 +59,8 @@ public class BuildingComposite extends BuildingComponent {
     }
 
     /**
-     *Calculates the cubature of a composite
-     * @return cubature
+     *Oblicza kubaturę kompozytu
+     * @return kubatura
      */
     public  float GetCubature(){
         float sum=0;
@@ -70,8 +70,8 @@ public class BuildingComposite extends BuildingComponent {
     }
 
     /**
-     *Calculates the heating of a composite
-     * @return heating
+     *Oblicza ciepło potrzebne do ogrzania kompozytu
+     * @return ciepło
      */
     @Override
     public float GetHeating() {
@@ -82,16 +82,16 @@ public class BuildingComposite extends BuildingComponent {
     }
 
     /**
-     *Calculates the wattage per square meter of a composite
-     * @return wattage/m2
+     *Oblicza oświetlenie na metr kwadratowy kompozytu
+     * @return wat/m2
      */
     public  float LampPerMeter2(){
         return this.GetLampWattage()/this.GetSurface();
     }
 
     /**
-     *Calculates the heating per cubic meter of a composite
-     * @return heat/m3
+     *Oblicza ciepło na metr sześcienny kompozytu
+     * @return ciepło/m3
      */
     @Override
     public float HeatPerMeter3() {
@@ -99,9 +99,9 @@ public class BuildingComposite extends BuildingComponent {
     }
 
     /**
-     *Looks for parts of composite which uses more than maxLevel heat per m3
-     * @param maxLevel higher values than maxLevel will be shown
-     * @return string with components ids and names
+     *Wyszukuje części kompozytu, które zużywaja więcej niż maxLevel ciepła na m3
+     * @param maxLevel próg powyżej którego wartości będą wyświetlane
+     * @return string z danymi komponentów
      */
     public String UsesMoreHeatThan(float maxLevel){
         String useMoreHeat="Id Name\n";
