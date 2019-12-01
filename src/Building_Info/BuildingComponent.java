@@ -1,55 +1,83 @@
 package Building_Info;
 
+/**
+ * Klasa abstrakcyjna definiująca wspólny interfejs i składowe klas opisujących budynki.
+ * Implementuje komponent z wzorca projektowego Komponent.
+ */
 public abstract class BuildingComponent {
     private int idx;
     private String name;
 
+    /**
+     * Konstruktor obiektów klasy BuildingComponent.
+     * @param idx Identyfikator obiektu. Powinien być unikalny w całym systemie.
+     * @param name Nazwa obiektu.
+     */
     public BuildingComponent(int idx, String name) {
         this.idx = idx;
         this.name = name;
     }
 
+    /**
+     * Zwraca powierzchnię obiektu.
+     * @return Powierzchnia obiektu.
+     */
     public abstract float GetSurface();
+
+    /**
+     * Zwraca moc oświetlenia w obiekcie.
+     * @return Moc oświetlenia obiektu.
+     */
     public abstract int GetLampWattage();
+
+    /**
+     * Zwraca kubaturę obiektu.
+     * @return Kubatura obiektu.
+     */
     public abstract float GetCubature();
+
+    /**
+     * Zwraca zużycie energii na ogrzewanie obiektu.
+     * @return Zużycie energii obiektu.
+     */
     public abstract float GetHeating();
+
+    /**
+     * Zwraca moc oświetlenia w przeliczeniu na jednostkę powierzchni obiektu.
+     * @return Moc oświetlenia w przeliczeniu na jednostkę powierzchni obiektu.
+     */
     public abstract float LampPerMeter2();
+
+    /**
+     * Zwraca zużycie energii na ogrzewanie w przeliczeniu na jednostkę objętości obiektu.
+     * @return Zużycie energii w przeliczeniu na jednostkę objętości obiektu.
+     */
     public abstract float HeatPerMeter3();
 
-
+    /**
+     * @return Identyfikator obiektu.
+     */
     public int getIdx() {
         return idx;
     }
 
+    /**
+     * @return Nazwa obiektu
+     */
     public String getName() {
         return name;
     }
 
-    public static BuildingComponent GetExamplaryBuilding() {
-        BuildingComposite budynek = new BuildingComposite(1, "Budynek");
-        BuildingComposite pietro1 = new BuildingComposite(2, "Pietro1");
-        pietro1.AddChild(new Room(3, "Poko1", 10, 10, 10));
-        pietro1.AddChild(new Room(4, "Poko1", 10, 10, 10));
-
-        BuildingComposite pietro2 = new BuildingComposite(5, "Pietro2");
-        pietro2.AddChild(new Room(6, "Poko1", 10, 10, 10));
-        pietro2.AddChild(new Room(7, "Poko1", 10, 10, 10));
-
-        BuildingComposite pietro3 = new BuildingComposite(10, "Pietro3");
-        pietro3.AddChild(new Room(9, "Poko1", 10, 10, 10));
-        pietro3.AddChild(new Room(10, "Poko1", 10, 10, 10));
-
-        BuildingComposite pietro4 = new BuildingComposite(11, "Pietro4");
-        pietro4.AddChild(new Room(12, "Poko1", 10, 10, 10));
-        pietro4.AddChild(new Room(13, "Poko1", 10, 10, 10));
-
-        budynek.AddChild(pietro1);
-        budynek.AddChild(pietro2);
-        budynek.AddChild(pietro3);
-        budynek.AddChild(pietro4);
-
-        return budynek;
-    }
+    /**
+     * Wypisuje na ekran informacje oo obiekcie tj.
+     * <li>
+     *     <ui>Nazwę, </ui>
+     *     <ui>Powierzchnię, </ui>
+     *     <ui>Objętość, </ui>
+     *     <ui>Moc oświetlenia na jednostkę powierzchni, </ui>
+     *     <ui>Zużycie energii na ogrzewanie w przeliczeniu na jednostkę objętości.</ui>
+     * </li>
+     */
     public void printInfo(){
         System.out.println("Name: "+getName());
         System.out.println("Surface: "+GetSurface());

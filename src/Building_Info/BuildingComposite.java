@@ -3,15 +3,28 @@ package Building_Info;
 import java.util.ArrayList;
 import java.util.Objects;
 
+/**
+ * Klasa implementująca kompozyt z wzorca projektowego Komponent.
+ * Obiekty tej klasy mogą być wykorzystane do reprezentacji, budynków i ich pięter.
+ */
 public class BuildingComposite extends BuildingComponent {
 
     private ArrayList<BuildingComponent> buildingComponents;
 
+    /**
+     * @param idx Unikalny identyfikator obiektu.
+     * @param name Nazwa obiektu.
+     */
     public BuildingComposite(int idx, String name) {
         super(idx, name);
             buildingComponents = new ArrayList<>();
     }
 
+    /**
+     * Przechodzi hierarchię w poszukiwaniu obiektu o podanym identyfikatorze.
+     * @param id Identyfikator poszukiwanego obiektu
+     * @return Poszukiwany obiekt lub null w przpyadku gdy nie został on odnaleziony.
+     */
     public BuildingComponent getComponentById(int id){
         for(BuildingComponent component : buildingComponents){
             if(component.getIdx() == id){
@@ -21,23 +34,32 @@ public class BuildingComposite extends BuildingComponent {
         return null;
     }
 
+    /**
+     * @return Zwraca ilość bezpośrednich składowych.
+     */
     public int GetChildCount(){
         return buildingComponents.size();
     }
 
+    /**
+     * @return Zwraca ostatnią bezpośrednią składową.
+     */
     BuildingComponent GetLastChild(){
         return buildingComponents.get(buildingComponents.size() - 1);
     }
 
+    /**
+     * @param buildingComponent Nowa składowa obiektu, będąca pochodną klasy BuildingComponent.
+     */
     public void AddChild(BuildingComponent buildingComponent) {
         buildingComponents.add(buildingComponent);
     }
 
-    /**
-     *Calculates the surface of a composite
-     * @return surface
-     */
 
+    /**
+     * {@inheritDoc}
+     * Przez powierzchnię obiektu, w tym wypadku rozumie się sumę powierzchni jego składowych.
+     */
     @Override
     public float GetSurface() {
         float sum=0;
@@ -48,9 +70,10 @@ public class BuildingComposite extends BuildingComponent {
     }
 
     /**
-     *Calculates the wattage of a composite
-     * @return wattage
+     * {@inheritDoc}
+     * Przez moc oświetlenia obiektu, w tym wypadku rozumie się sumę mocy oświetlenia jego składowych.
      */
+    @Override
     public  int GetLampWattage(){
         int sum=0;
         for (BuildingComponent component : buildingComponents)
@@ -59,9 +82,10 @@ public class BuildingComposite extends BuildingComponent {
     }
 
     /**
-     *Calculates the cubature of a composite
-     * @return cubature
+     * {@inheritDoc}
+     * Przez kubaturę obiektu, w tym wypadku rozumie się sumę kubatur jego składowych.
      */
+    @Override
     public  float GetCubature(){
         float sum=0;
         for (BuildingComponent component : buildingComponents)
@@ -70,8 +94,8 @@ public class BuildingComposite extends BuildingComponent {
     }
 
     /**
-     *Calculates the heating of a composite
-     * @return heating
+     * {@inheritDoc}
+     * Przez zużycie energii na ogrzewanie obiektu, w tym wypadku rozumie się sumę zużyć energii jego składowych.
      */
     @Override
     public float GetHeating() {
@@ -82,16 +106,18 @@ public class BuildingComposite extends BuildingComponent {
     }
 
     /**
-     *Calculates the wattage per square meter of a composite
-     * @return wattage/m2
+     * {@inheritDoc}
+     * Przez powierzchnię obiektu, w tym wypadku rozumie się sumę powierzchni jego składowych.
+     * Przez moc oświetlenia obiektu, w tym wypadku rozumie się sumę mocy oświetlenia jego składowych.
      */
     public  float LampPerMeter2(){
         return this.GetLampWattage()/this.GetSurface();
     }
 
     /**
-     *Calculates the heating per cubic meter of a composite
-     * @return heat/m3
+     * {@inheritDoc}
+     * Przez zużycie energii na ogrzewanie obiektu, w tym wypadku rozumie się sumę zużyć energii jego składowych.
+     * Przez kubaturę obiektu, w tym wypadku rozumie się sumę kubatur jego składowych.
      */
     @Override
     public float HeatPerMeter3() {
@@ -99,9 +125,11 @@ public class BuildingComposite extends BuildingComponent {
     }
 
     /**
-     *Looks for parts of composite which uses more than maxLevel heat per m3
-     * @param maxLevel higher values than maxLevel will be shown
-     * @return string with components ids and names
+     * Wyszukuje składowe obiektu których zużycie energii na ogrzewanie w jednostcę obiętości przekracza podany limit.
+     * @param maxLevel limit żużycia energii
+     * @return Łańcuch znaków.
+     * Każda linia zawiera identyfikator i nazwę składowej przekrazcającej limit.
+     * Linie oddzielane są pojedyńczym znakiem końca lini.
      */
     public String UsesMoreHeatThan(float maxLevel){
         String useMoreHeat="Id Name\n";
