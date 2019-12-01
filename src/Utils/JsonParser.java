@@ -76,4 +76,25 @@ public class JsonParser {
             throw new IllegalStateException();
         }
     }
+
+    /**
+     * Funkcja zwracająca zawartość pliku json w postaci ciągu znaków
+     *
+     * @param jsonName plik json
+     * @return zawartość pliku json
+     * @throws IOException wyjątek IO wyrzucany gdy podany plik nie istnieje
+     */
+    public String getStringFromJson(String jsonName) throws IOException{
+        InputStream in = new FileInputStream("src/"+jsonName);
+        BufferedReader buf = new BufferedReader(new InputStreamReader(in));
+
+        String line = buf.readLine();
+        StringBuilder stringBuilder = new StringBuilder();
+
+        while(line != null){
+            stringBuilder.append(line).append("\n");
+            line = buf.readLine();
+        }
+        return stringBuilder.toString();
+    }
 }

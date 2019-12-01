@@ -254,6 +254,7 @@ public class RestHandling extends HttpServlet {
      * @return Status wykonanej operacji
      */
     @POST
+    @Path("create")
     public Response postBuilding(String string){
         try{
             jsonParser.saveFromString(string);
@@ -264,6 +265,24 @@ public class RestHandling extends HttpServlet {
             return Response.status(Response.Status.METHOD_NOT_ALLOWED).build();
         }
         return Response.ok("Upload complete").build();
+    }
+
+    /**
+     * Funkcja zwracająca budynek w postaci json
+     *
+     * @param id numer identyfikujący budynek
+     * @return Status wykonanej operacji
+     */
+    @GET
+    @Path("{id}/get")
+    public Response getBuilding(@PathParam("id") Integer id){
+        try{
+            String out = jsonParser.getStringFromJson(id.toString()+".json");
+            return Response.ok(out).build();
+        }catch (IOException e){
+            e.printStackTrace();
+            return Response.status(Response.Status.NOT_FOUND).build();
+        }
     }
 
 }
