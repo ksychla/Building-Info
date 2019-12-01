@@ -12,6 +12,19 @@
 	<build>
 		<finalName>BuildingInfo</finalName>
 		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-shade-plugin</artifactId>
+				<version>1.6</version>
+				<executions>
+				  <execution>
+					<phase>package</phase>
+					<goals>
+					  <goal>shade</goal>
+					</goals>
+				  </execution>
+				</executions>
+			</plugin>
 			<!--use mvn jar:jar when building to dump a jar file to the target location-->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -21,7 +34,9 @@
 					  <archive>
 						<manifest>
 							<!--jar entry class-->
+							<addClasspath>true</addClasspath>
 							<mainClass>Main</mainClass>
+							<classpathPrefix>lib/</classpathPrefix>
 						</manifest>
 					  </archive>
 				</configuration>
@@ -47,6 +62,14 @@
 				</executions>
 			</plugin>
 
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-enforcer-plugin</artifactId>
+				<version>1.3.1</version>
+				<configuration>
+					<rules><dependencyConvergence/></rules>
+				</configuration>
+			</plugin>
 		</plugins>
 	</build>
 
@@ -81,25 +104,31 @@
 		<dependency>
 			<groupId>org.eclipse.jetty</groupId>
 			<artifactId>jetty-server</artifactId>
-			<version>[9.4.22.v20191022]</version>
+			<version>[9.4.17.v20190418]</version>
 		</dependency>
 
 		<dependency>
 			<groupId>org.eclipse.jetty</groupId>
 			<artifactId>jetty-servlet</artifactId>
-			<version>[9.4.22.v20191022]</version>
+			<version>[9.4.17.v20190418]</version>
 		</dependency>
 
 		<dependency>
 			<groupId>org.glassfish.jersey.core</groupId>
 			<artifactId>jersey-server</artifactId>
-			<version>2.17</version>
+			<version>2.29.1</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.glassfish.jersey.inject</groupId>
+			<artifactId>jersey-hk2</artifactId>
+			<version>2.29.1</version>
 		</dependency>
 
 		<dependency>
 			<groupId>org.glassfish.jersey.containers</groupId>
 			<artifactId>jersey-container-jetty-servlet</artifactId>
-			<version>2.17</version>
+			<version>2.29.1</version>
 		</dependency>
 
 	</dependencies>
@@ -112,12 +141,6 @@
 				<artifactId>maven-site-plugin</artifactId>
 				<version>3.3</version>
 			</plugin>
-			<!--reports-->
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-project-info-reports-plugin</artifactId>
-				<version>2.7</version>
-			</plugin>
 			<!--preps for the java doc-->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -127,6 +150,4 @@
 
 		</plugins>
 	</reporting>
-
-
 </project>
