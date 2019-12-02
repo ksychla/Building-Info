@@ -1,6 +1,9 @@
 #!/bin/bash
 
-echo -e "Executing javadoc-to-gh-pages.sh"
+echo -e "Executing javadoc-to-gh-pages.sh\n"
+echo -e "$TRAVIS_REPO_SLUG\n"
+echo -e "$TRAVIS_BRANCH\n"
+
 if [ "$TRAVIS_REPO_SLUG" == "RenegadeWizard/Building-Info" ] && [ "$TRAVIS_BRANCH" == "master" ]; then
 
   echo -e "Publishing javadoc...\n"
@@ -20,3 +23,4 @@ if [ "$TRAVIS_REPO_SLUG" == "RenegadeWizard/Building-Info" ] && [ "$TRAVIS_BRANC
   git push -fq "https://${GH_TOKEN}@github.com/${TRAVIS_REPO_SLUG}.git"
 
   echo -e "Published Javadoc to gh-pages.\n"
+fi
