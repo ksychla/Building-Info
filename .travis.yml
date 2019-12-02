@@ -6,4 +6,4 @@ env:
 
 after_success:
 - mvn javadoc:javadoc
-- .utility/push-javadoc-to-gh-pages.sh
+- utility/push-javadoc-to-gh-pages.sh
