@@ -5,6 +5,8 @@ echo -e "$TRAVIS_REPO_SLUG\n"
 echo -e "$TRAVIS_BRANCH\n"
 
 if [ "$TRAVIS_REPO_SLUG" == "RenegadeWizard/Building-Info" ] && [ "$TRAVIS_BRANCH" == "master" ]; then
+  
+  mvn javadoc:javadoc
 
   echo -e "Publishing javadoc...\n"
 
