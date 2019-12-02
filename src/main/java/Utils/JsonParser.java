@@ -20,7 +20,7 @@ public class JsonParser {
     public void saveJson(BuildingComponent building, String json_name){
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
         try {
-            FileWriter parser = new FileWriter("src/"+json_name);
+            FileWriter parser = new FileWriter("out/"+json_name);
 
             gson.toJson(building,parser);
             parser.close();
@@ -41,7 +41,7 @@ public class JsonParser {
         BuildingComponent building = null;
 
         try {
-            Reader jsonreader = new FileReader("src/"+json_name);
+            Reader jsonreader = new FileReader("out/"+json_name);
             building = gson.fromJson(jsonreader, BuildingComponent.class);
 
         } catch (FileNotFoundException e) {
@@ -61,7 +61,7 @@ public class JsonParser {
         File file = null;
         int num = 0;
         for(int i=1;i<1000;i++){
-            file = new File("src/"+i+".json");
+            file = new File("out/"+i+".json");
             if(file.createNewFile()){
                 num = i;
                 break;
@@ -85,7 +85,7 @@ public class JsonParser {
      * @throws IOException wyjątek IO wyrzucany gdy podany plik nie istnieje
      */
     public String getStringFromJson(String jsonName) throws IOException{
-        InputStream in = new FileInputStream("src/"+jsonName);
+        InputStream in = new FileInputStream("out/"+jsonName);
         BufferedReader buf = new BufferedReader(new InputStreamReader(in));
 
         String line = buf.readLine();

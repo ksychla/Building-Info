@@ -45,5 +45,8 @@ Adresy URI wykorzystywane do komunikacji z REST API
 127.0.0.1:8080/building/{id}/get 
 ```
 
+## Project structure
+![UML diagram](UMLdiagram.jpg?raw=true "UML")
+
 ## Documantation
 https://renegadewizard.github.io/Building-Info/
