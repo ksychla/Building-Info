@@ -3,7 +3,7 @@ Dla administratorów budynków, którzy pragną optymalizować koszty zarządzan
 
 ![Travis](https://travis-ci.org/RenegadeWizard/Building-Info.svg?branch=master)
 
-## Building structure
+## Struktura budynku
 * Lokacja to budynek, poziom (piętro), lub pomieszczenie
 * Budynek może składać się z poziomów a te z pomieszczeń
 * Każda lokalizacja jest charakteryzowana przez:
