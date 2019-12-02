@@ -2,3 +2,4 @@ language: Java
 install: mvn install
 after_success:
 - mvn javadoc:javadoc
+- .utility/push-javadoc-to-gh-pages.sh
