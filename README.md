@@ -15,7 +15,7 @@ Dla administratorów budynków, którzy pragną optymalizować koszty zarządzan
    * heating = poziom zużycia energii ogrzewania (float)
    * light – łączna moc oświetlenia
 
-## Usage
+## Przykład użycia
 
 Przykładowe wykorzystanie curl:
 ```bash
@@ -45,8 +45,8 @@ Adresy URI wykorzystywane do komunikacji z REST API
 127.0.0.1:8080/building/{id}/get 
 ```
 
-## Project structure
+## Struktura projektu
 ![UML diagram](UMLdiagram.jpg?raw=true "UML")
 
-## Documantation
+## Dokumentacja
 https://renegadewizard.github.io/Building-Info/
