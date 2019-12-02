@@ -7,13 +7,13 @@ Dla administratorów budynków, którzy pragną optymalizować koszty zarządzan
 * Lokacja to budynek, poziom (piętro), lub pomieszczenie
 * Budynek może składać się z poziomów a te z pomieszczeń
 * Każda lokalizacja jest charakteryzowana przez:
-    * id – unikalny identyfikator
-   * name – opcjonalna nazwa lokalizacji
+    * unikalny identyfikator
+   * opcjonalna nazwa lokalizacji
 * Pomieszczenie dodatkowo jest charakteryzowane przez:
-   * area = powierzchnia w m^2
-   * cube = kubatura pomieszczenia w m^3
-   * heating = poziom zużycia energii ogrzewania (float)
-   * light – łączna moc oświetlenia
+   * powierzchnia w m^2
+   * kubatura pomieszczenia w m^3
+   * poziom zużycia energii ogrzewania (float)
+   * łączna moc oświetlenia
 
 ## Przykład użycia
 
