@@ -9,7 +9,7 @@ if [ "$TRAVIS_REPO_SLUG" == "RenegadeWizard/Building-Info" ] && [ "$TRAVIS_BRANC
   cd $HOME
   git config --global user.email "travis@travis-ci.org"
   git config --global user.name "travis-ci"
-  git clone --quiet --branch=gh-pages https://${GH_TOKEN}@github.com/ReadyTalk/swt-bling gh-pages > /dev/null
+  git clone --quiet --branch=gh-pages https://${GH_TOKEN}@github.com/RenegadeWizard/Building-Info gh-pages > /dev/null
 
   cd gh-pages
   git rm -rf ./javadoc
