@@ -44,3 +44,6 @@ Adresy URI wykorzystywane do komunikacji z REST API
 127.0.0.1:8080/building/create 
 127.0.0.1:8080/building/{id}/get 
 ```
+
+## Documantation
+https://renegadewizard.github.io/Building-Info/
