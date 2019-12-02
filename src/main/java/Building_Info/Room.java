@@ -1,11 +1,23 @@
 package Building_Info;
 
+/**
+ * Klasa do reprezentacji pokoi.
+ * Jest implementacją Liścia z wzorca Komponent.
+ */
 public class Room extends BuildingComponent{
     private float surface;
     private int lampWattage;
     private float cubature;
     private float heating;
 
+    /**
+     * Konstruktor obiektów klasy Room
+     * @param idx Unikalny identyfikator obiektu.
+     * @param name Nazwa obiektu.
+     * @param surface Powierzchnia
+     * @param lampWattage Moc oświetlenia
+     * @param cubature Objętość
+     */
     public Room(int idx, String name, float surface, int lampWattage, float cubature) {
         super(idx, name);
         this.surface = surface;

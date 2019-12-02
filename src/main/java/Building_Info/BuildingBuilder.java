@@ -11,7 +11,8 @@ public class BuildingBuilder {
     int idx = 0;
 
     /**
-     * Tworzy instancję budowniczego, gotowego do wykonywania kolejnych kroków składani budynku.
+     * Tworzy instancję budowniczego.
+     * Po utworzeniu budowniczy jest gotowy do wykonywania kolejnych kroków składani budynku.
      * @param name Nazwa konstruuowanych budynków.
      */
     public BuildingBuilder() {

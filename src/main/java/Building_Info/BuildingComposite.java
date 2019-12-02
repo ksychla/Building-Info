@@ -4,14 +4,15 @@ import java.util.ArrayList;
 import java.util.Objects;
 
 /**
- * Klasa implementująca kompozyt z wzorca projektowego Komponent.
- * Obiekty tej klasy mogą być wykorzystane do reprezentacji, budynków i ich pięter.
+ * Klasa do reprezentacji, budynków i ich pięter.
+ * Jest implementacją kompozytu z wzorca projektowego Komponent.
  */
 public class BuildingComposite extends BuildingComponent {
 
     private ArrayList<BuildingComponent> buildingComponents;
 
     /**
+     * Konstruktor obiektów klasy BuildingComposite
      * @param idx Unikalny identyfikator obiektu.
      * @param name Nazwa obiektu.
      */

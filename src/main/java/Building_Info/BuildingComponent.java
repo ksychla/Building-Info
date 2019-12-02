@@ -2,7 +2,7 @@ package Building_Info;
 
 /**
  * Klasa abstrakcyjna definiująca wspólny interfejs i składowe klas opisujących budynki.
- * Implementuje komponent z wzorca projektowego Komponent.
+ * Jest implementacją komponentu z wzorca projektowego Komponent.
  */
 public abstract class BuildingComponent {
     private int idx;
