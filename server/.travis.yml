@@ -1,0 +1,10 @@
+language: Java
+install: mvn install
+env:
+  global:
+    - secure: "LPqnNoyzfbD6ipQ1WdgpGyk7lnGAYPQzH+Zgp5Iwe+yM0/Xo7qSj/V4L4EgQPBF8J+KrkXZX1ADwMg0zS+xIB5LPNGiB4NWp5bGJBCift3P7GK7qzxGR5dZAn8Xi3vi4XhzQd/4CzLxtC3mWMoMohBwbWSTQhN6KYIkyG8Ho/2cEGAlGJTgENVxLZ9wYZG2ftVm/f3YbVN2D7STn2JWAnTXswvp77A+dF1mfIuhcVrrW2zLSGz05WEbXtIgq+ZQiQdYTAM56+AzQSfMEhnUi5h2IT0t6FOCTjhBx3xCe0KLWXMej+7bYA2V+jX+ZIzkgWH7Fa2sY6o3kOcVk3MomL9DefGyYH3gjZwK81+NZZdTh2J3YHc6N+kbQ6LAuWMOXKQRZNL06rsuvJOTH4oQbZKm2ecOTdrVebGhCZDd90g1yMN1uDKUXUVM+8haVt6pEQuLBXbYgJ4TOTiuHQvrE+81kwxKnUzn5Y/q9GDGOheUcetFkzjomSMwK5w5uYTM/OQzJrryazCkWh627g9UjrAYOI9Di800nZvS6wDbwLuBVIrS8OtdUKOtags0wgLoQfYc62cOUtqLJN32FZ4Y4a/oFHXvMd3Rq9GENuo+LO38NmmtKxDb2YXIkzpw9CvAQ3OZpSfkZMfU0Dnj2Agru+GnbYLQ4tYpBzp5TNG0MxEw="
+
+after_success:
+- mvn javadoc:javadoc
+- chmod +x utility/push-javadoc-to-gh-pages.sh
+- utility/push-javadoc-to-gh-pages.sh
