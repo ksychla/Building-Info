@@ -1,8 +1,0 @@
-Main.class
-RestApi/RestHandling.class
-Building_Info/BuildingBuilder.class
-Building_Info/Room.class
-Building_Info/BuildingComposite.class
-Utils/JsonParser.class
-Building_Info/BuildingComponent.class
-Utils/BuildingDeserializer.class
