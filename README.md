@@ -19,30 +19,27 @@ Dla administratorów budynków, którzy pragną optymalizować koszty zarządzan
 
 Przykładowe wykorzystanie curl:
 ```bash
-curl 127.0.0.1:8080/building/1/surface
-curl -X POST -d "$(cat building.json)" 127.0.0.1:8080/building/create
-curl 127.0.0.1:8080/building/1/get
+curl -X GET -d "$(cat building.json)" 127.0.0.1:8080/building/surface
+curl -X GET -d "$(cat building.json)" 127.0.0.1:8080/building/floor/2/cubature
+curl -X GET -d "$(cat building.json)" 127.0.0.1:8080/building/floor/2/room/4/wattage
 ```
 
 Adresy URI wykorzystywane do komunikacji z REST API
 ```$xslt
-127.0.0.1:8080/building/{id}/surface
-127.0.0.1:8080/building/{id}/cubature
-127.0.0.1:8080/building/{id}/heating
-127.0.0.1:8080/building/{id}/wattage
+127.0.0.1:8080/building/surface
+127.0.0.1:8080/building/cubature
+127.0.0.1:8080/building/heating
+127.0.0.1:8080/building/wattage
 
-127.0.0.1:8080/building/{id}/floorId/{id}/surface
-127.0.0.1:8080/building/{id}/floorId/{id}/cubature
-127.0.0.1:8080/building/{id}/floorId/{id}/heating 
-127.0.0.1:8080/building/{id}/floorId/{id}/wattage 
+127.0.0.1:8080/building/floor/{id}/surface
+127.0.0.1:8080/building/floor/{id}/cubature
+127.0.0.1:8080/building/floor/{id}/heating 
+127.0.0.1:8080/building/floor/{id}/wattage 
 
-127.0.0.1:8080/building/{id}/floorId/{id}/roomId/{id}/surface
-127.0.0.1:8080/building/{id}/floorId/{id}/roomId/{id}/cubature
-127.0.0.1:8080/building/{id}/floorId/{id}/roomId/{id}/heating
-127.0.0.1:8080/building/{id}/floorId/{id}/roomId/{id}/wattage
-
-127.0.0.1:8080/building/create 
-127.0.0.1:8080/building/{id}/get 
+127.0.0.1:8080/building/floor/{id}/room/{id}/surface
+127.0.0.1:8080/building/floor/{id}/room/{id}/cubature
+127.0.0.1:8080/building/floor/{id}/room/{id}/heating
+127.0.0.1:8080/building/floor/{id}/room/{id}/wattage
 ```
 
 ## Struktura projektu

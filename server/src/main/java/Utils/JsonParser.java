@@ -57,7 +57,7 @@ public class JsonParser {
      * @param json plik json w postaci ciągu znaków
      * @throws IOException wyjątek IO wyrzucany gdy podany plik nie nadaje się do zapisu
      */
-    public void saveFromString(String json) throws IOException{
+    public File saveFromString(String json) throws IOException{
         File file = null;
         int num = 0;
         for(int i=1;i<1000;i++){
@@ -75,6 +75,7 @@ public class JsonParser {
             file.delete();
             throw new IllegalStateException();
         }
+        return file;
     }
 
     /**
