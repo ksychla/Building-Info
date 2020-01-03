@@ -9,11 +9,11 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class Controller {
+public class Create {
     @FXML
     public BorderPane borderP;
 
-    private void changeSceneTo(String file){
+    private void changeSceneTo(String file){    // TODO: Change to static method somewhere
         Stage stage = (Stage) borderP.getScene().getWindow();
         try{
             Parent root = FXMLLoader.load(getClass().getResource(file));
@@ -26,11 +26,7 @@ public class Controller {
     }
 
     @FXML
-    public void createButton(){ changeSceneTo("/create.fxml"); }
-
-    @FXML
-    public void uploadButton(){ changeSceneTo("/upload.fxml"); }
-
-    @FXML
-    public void evaluateButton(){ changeSceneTo("/evaluate.fxml"); }
+    public void plusButton(){
+        changeSceneTo("/addRoom.fxml");
+    }
 }

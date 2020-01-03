@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="sample.addRoom"
+            stylesheets="style.css">
+    <top>
+        <TextField id="nameTextField" promptText="Name"/>
+    </top>
+    <center>
+        <HBox>
+            <VBox>
+                <TextField styleClass="roomTextField" promptText="Surface"/>
+                <TextField styleClass="roomTextField" promptText="Cubature"/>
+                <TextField styleClass="roomTextField" promptText="Wattage"/>
+                <TextField styleClass="roomTextField" promptText="Heating"/>
+            </VBox>
+            <ImageView fx:id="roomImage">
+                <Image url="img/room.png"/>
+            </ImageView>
+        </HBox>
+    </center>
+    <bottom>
+        <BorderPane>
+            <right>
+                <Button id="uploadButton">Save</Button>
+            </right>
+        </BorderPane>
+    </bottom>
+</BorderPane>

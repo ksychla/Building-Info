@@ -1,0 +1,70 @@
+.root{
+    -fx-background-color: #1C1C1E;
+}
+
+#title{
+    -fx-text-fill: #fff;
+    -fx-font-size: 45px;
+    -fx-padding: 20px;
+}
+
+.mainButton{
+    -fx-background-color: #2C2C2E;
+    -fx-text-fill: #fff;
+}
+
+.mainButton:hover{
+    -fx-cursor: hand;
+}
+
+#uploadBorder{
+    -fx-padding: 100px;
+    -fx-alignment: center;
+}
+
+#uploadFiles{
+    -fx-border-width: 5px;
+    -fx-border-style: dashed;
+    -fx-border-color: #909090;
+    -fx-pref-width: 400px;
+    -fx-alignment: center;
+}
+
+#uploadButton{
+    -fx-background-color: #C11B2A;
+    -fx-text-fill: #fff;
+    -fx-min-width: 100px;
+}
+
+#uploadButton:hover{
+    -fx-cursor: hand;
+}
+
+#plus{
+    -fx-min-width: 100px;
+    -fx-min-height: 100px;
+    -fx-border-style: dashed;
+    -fx-border-width: 5px;
+    -fx-border-color: #909090;
+    -fx-background-color: none;
+}
+
+#plus:hover{
+    -fx-cursor: hand;
+}
+
+#nameTextField{
+    -fx-max-width: 200px;
+    -fx-background-color: #2C2C2E;
+    -fx-text-fill: #5F5F52;
+    -fx-prompt-text-fill: #5F5F52;
+}
+
+.roomTextField{
+    -fx-min-width: 200px;
+    -fx-background-color: none;
+    -fx-border-width: 0 0 2 0;
+    -fx-border-color: #979797;
+    -fx-text-fill: #5F5F52;
+    -fx-prompt-text-fill: #5F5F52;
+}
