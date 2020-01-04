@@ -1,5 +1,6 @@
 package sample;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.geometry.Rectangle2D;
 import javafx.scene.image.ImageView;
@@ -9,6 +10,9 @@ import javafx.stage.Screen;
 public class Upload {
     private double height;
     private double width;
+
+    @FXML
+    public BorderPane uploadBorder;
 
     @FXML
     public ImageView buildingImage;
@@ -22,5 +26,9 @@ public class Upload {
         double w = 406 * 0.6 * height / h;
         buildingImage.setFitHeight(height * 0.6);
         buildingImage.setFitWidth(w);
+    }
+
+    public void returnTo() {
+        Main.changeSceneTo(uploadBorder, "/sample.fxml");
     }
 }

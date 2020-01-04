@@ -6,11 +6,12 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 <BorderPane fx:controller="sample.Controller"
-            xmlns:fx="http://javafx.com/fxml" stylesheets="style.css" fx:id="borderP">
+            xmlns:fx="http://javafx.com/fxml" stylesheets="style.css" fx:id="borderP"
+            id="roomBorderP">
 
     <top><Label id="title">BuildingInfo</Label></top>
     <center>
-        <HBox>
+        <HBox style="-fx-alignment: center; -fx-spacing: 30px;">
             <Button styleClass="mainButton" onAction="#createButton">Create</Button>
             <Button styleClass="mainButton" onAction="#uploadButton">Upload</Button>
             <Button styleClass="mainButton" onAction="#evaluateButton">Evaluate</Button>

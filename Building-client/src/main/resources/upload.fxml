@@ -12,16 +12,31 @@
       xmlns:fx="http://javafx.com/fxml"
       fx:controller="sample.Upload"
       stylesheets="style.css"
-    fx:id="uploadBorder">
-    <left>
-        <ImageView fx:id="buildingImage" id="buildingImage">
-            <Image url="img/building.png"/>
-        </ImageView>
-    </left>
-    <right>
-        <VBox id="uploadFiles">
-            <Label>PLUS</Label>
-            <Button id="uploadButton">Upload</Button>
-        </VBox>
-    </right>
+    fx:id="uploadBorder"
+    id="roomBorderP">
+    <top>
+        <HBox style="-fx-spacing: 20px; -fx-alignment: center-left;">
+            <Button id="arrow" onAction="#returnTo">
+                <graphic>
+                    <ImageView>
+                        <Image url="img/arrow.png" requestedWidth="40.0" preserveRatio="true"/>
+                    </ImageView>
+                </graphic>
+            </Button>
+            <Label id="title">Upload</Label>
+        </HBox>
+    </top>
+    <center>
+        <HBox style="-fx-alignment: center; -fx-spacing: 250px">
+            <ImageView fx:id="buildingImage" id="buildingImage">
+                <Image url="img/building.png"/>
+            </ImageView>
+
+            <VBox id="uploadFiles">
+                <Label>PLUS</Label>
+                <Button id="uploadButton">Upload</Button>
+            </VBox>
+        </HBox>
+
+    </center>
 </BorderPane>

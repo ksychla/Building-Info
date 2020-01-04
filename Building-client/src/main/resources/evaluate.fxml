@@ -5,11 +5,33 @@
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.geometry.*?>
 
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
 <BorderPane xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
             fx:controller="sample.Evaluate"
-            prefHeight="400.0" prefWidth="600.0"
-            stylesheets="style.css">
-
+            stylesheets="style.css"
+            fx:id="borderP"
+            id="roomBorderP">
+    <top>
+        <HBox style="-fx-spacing: 20px; -fx-alignment: center-left;">
+            <Button id="arrow" onAction="#returnTo">
+                <graphic>
+                    <ImageView>
+                        <Image url="img/arrow.png" requestedWidth="40.0" preserveRatio="true"/>
+                    </ImageView>
+                </graphic>
+            </Button>
+            <Label id="title">Evaluate</Label>
+        </HBox>
+    </top>
+    <center>
+        <VBox style="-fx-alignment: top-center; -fx-spacing: 10px; -fx-padding: 50px">
+            <Button styleClass="buildingButton">Building1</Button>
+            <Button styleClass="buildingButton">Building2</Button>
+            <Button styleClass="buildingButton">Building3</Button>
+        </VBox>
+    </center>
 </BorderPane>

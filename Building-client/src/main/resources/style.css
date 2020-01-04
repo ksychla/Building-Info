@@ -5,12 +5,14 @@
 #title{
     -fx-text-fill: #fff;
     -fx-font-size: 45px;
-    /*-fx-padding: 20px;*/
 }
 
 .mainButton{
     -fx-background-color: #2C2C2E;
     -fx-text-fill: #fff;
+    -fx-min-height: 150px;
+    -fx-min-width: 150px;
+    -fx-font-size: 24px;
 }
 
 .mainButton:hover{
@@ -28,6 +30,7 @@
     -fx-border-color: #909090;
     -fx-pref-width: 400px;
     -fx-alignment: center;
+    -fx-spacing: 150px;
 }
 
 #uploadButton{
@@ -91,5 +94,18 @@
 }
 
 #arrow:hover{
+    -fx-cursor: hand;
+}
+
+.buildingButton{
+    -fx-min-height: 50px;
+    -fx-min-width: 800px;
+    -fx-background-color: #2C2C2E;
+    -fx-alignment: center-left;
+    -fx-text-fill: #5F5F52;
+    -fx-font-size: 18px;
+}
+
+.buildingButton:hover{
     -fx-cursor: hand;
 }
