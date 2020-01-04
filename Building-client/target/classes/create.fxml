@@ -6,13 +6,26 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
 <BorderPane xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
             fx:controller="sample.Create"
             stylesheets="style.css"
-            fx:id="borderP">
+            fx:id="borderP"
+            id="roomBorderP">
     <top>
-        <Label id="title">Create</Label>
+        <HBox style="-fx-spacing: 20px; -fx-alignment: center-left">
+            <Button id="arrow" onAction="#returnTo">
+                <graphic>
+                    <ImageView>
+                        <Image url="img/arrow.png" requestedWidth="40.0" preserveRatio="true"/>
+                    </ImageView>
+                </graphic>
+            </Button>
+            <Label id="title">Create</Label>
+        </HBox>
+
     </top>
     <center>
         <HBox>

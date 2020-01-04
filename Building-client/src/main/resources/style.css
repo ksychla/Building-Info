@@ -5,7 +5,7 @@
 #title{
     -fx-text-fill: #fff;
     -fx-font-size: 45px;
-    -fx-padding: 20px;
+    /*-fx-padding: 20px;*/
 }
 
 .mainButton{
@@ -33,7 +33,8 @@
 #uploadButton{
     -fx-background-color: #C11B2A;
     -fx-text-fill: #fff;
-    -fx-min-width: 100px;
+    -fx-min-width: 150px;
+    -fx-min-height: 35px;
 }
 
 #uploadButton:hover{
@@ -44,7 +45,7 @@
     -fx-min-width: 100px;
     -fx-min-height: 100px;
     -fx-border-style: dashed;
-    -fx-border-width: 5px;
+    -fx-border-width: 3px;
     -fx-border-color: #909090;
     -fx-background-color: none;
 }
@@ -58,13 +59,37 @@
     -fx-background-color: #2C2C2E;
     -fx-text-fill: #5F5F52;
     -fx-prompt-text-fill: #5F5F52;
+    -fx-min-height: 40px;
 }
 
 .roomTextField{
-    -fx-min-width: 200px;
+    -fx-min-width: 300px;
     -fx-background-color: none;
     -fx-border-width: 0 0 2 0;
     -fx-border-color: #979797;
     -fx-text-fill: #5F5F52;
     -fx-prompt-text-fill: #5F5F52;
+    -fx-font-size: 20px;
+}
+
+#roomHbox{
+    -fx-padding: 75 100 0 100;
+}
+
+#roomVbox{
+    -fx-spacing: 25px;
+    -fx-alignment: center;
+    /*-fx-padding: 0 0 20 0;*/
+}
+
+#roomBorderP{
+    -fx-padding: 20px;
+}
+
+#arrow{
+    -fx-background-color: none;
+}
+
+#arrow:hover{
+    -fx-cursor: hand;
 }

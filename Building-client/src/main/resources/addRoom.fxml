@@ -11,22 +11,39 @@
 <BorderPane xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
             fx:controller="sample.addRoom"
-            stylesheets="style.css">
+            stylesheets="style.css"
+            id="roomBorderP"
+            fx:id="borderP">
     <top>
-        <TextField id="nameTextField" promptText="Name"/>
+        <HBox style="-fx-spacing: 20px; -fx-alignment: center-left;">
+            <Button id="arrow" onAction="#returnTo">
+                <graphic>
+                    <ImageView>
+                        <Image url="img/arrow.png" requestedWidth="40.0" preserveRatio="true"/>
+                    </ImageView>
+                </graphic>
+            </Button>
+            <TextField id="nameTextField" promptText="Name"/>
+        </HBox>
+
     </top>
     <center>
-        <HBox>
-            <VBox>
-                <TextField styleClass="roomTextField" promptText="Surface"/>
-                <TextField styleClass="roomTextField" promptText="Cubature"/>
-                <TextField styleClass="roomTextField" promptText="Wattage"/>
-                <TextField styleClass="roomTextField" promptText="Heating"/>
-            </VBox>
-            <ImageView fx:id="roomImage">
-                <Image url="img/room.png"/>
-            </ImageView>
-        </HBox>
+        <BorderPane id="roomHbox">
+            <left>
+                <VBox id="roomVbox">
+                    <TextField styleClass="roomTextField" promptText="Surface"/>
+                    <TextField styleClass="roomTextField" promptText="Cubature"/>
+                    <TextField styleClass="roomTextField" promptText="Wattage"/>
+                    <TextField styleClass="roomTextField" promptText="Heating"/>
+                </VBox>
+            </left>
+            <right>
+                <ImageView fx:id="roomImage">
+                    <Image url="img/room.png"/>
+                </ImageView>
+            </right>
+
+        </BorderPane>
     </center>
     <bottom>
         <BorderPane>

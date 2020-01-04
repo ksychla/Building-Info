@@ -5,8 +5,11 @@ import javafx.fxml.FXMLLoader;
 import javafx.geometry.Rectangle2D;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.layout.BorderPane;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
+
+import java.io.IOException;
 
 public class Main extends Application {
 
@@ -21,6 +24,17 @@ public class Main extends Application {
         primaryStage.show();
     }
 
+    public static void changeSceneTo(BorderPane borderP, String file){    // TODO: Change to static method somewhere
+        Stage stage = (Stage) borderP.getScene().getWindow();
+        try{
+            Parent root = FXMLLoader.load(Main.class.getResource(file));
+            double width = borderP.getWidth();
+            double height = borderP.getHeight();
+            Scene scene = new Scene(root, width, height);
+            stage.setScene(scene);
+            stage.show();
+        }catch (IOException ignored){ }
+    }
 
     public static void main(String[] args) {
         launch(args);
