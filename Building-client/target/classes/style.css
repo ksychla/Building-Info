@@ -73,6 +73,7 @@
     -fx-text-fill: #5F5F52;
     -fx-prompt-text-fill: #5F5F52;
     -fx-font-size: 20px;
+    -fx-padding: 0 0 5 5;
 }
 
 #roomHbox{
@@ -80,7 +81,7 @@
 }
 
 #roomVbox{
-    -fx-spacing: 25px;
+    -fx-spacing: 20px;
     -fx-alignment: center;
     /*-fx-padding: 0 0 20 0;*/
 }
@@ -108,4 +109,14 @@
 
 .buildingButton:hover{
     -fx-cursor: hand;
+}
+
+.goodLabel{
+    -fx-text-fill: none;
+    -fx-font-size: 15px;
+}
+
+.wrongLabel{
+    -fx-text-fill: #ff0000;
+    -fx-font-size: 15px;
 }

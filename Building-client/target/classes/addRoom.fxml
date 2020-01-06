@@ -23,7 +23,11 @@
                     </ImageView>
                 </graphic>
             </Button>
-            <TextField id="nameTextField" promptText="Name"/>
+            <VBox fx:id="name">
+                <TextField id="nameTextField" promptText="Name" fx:id="nameText"/>
+                <Label styleClass="goodLabel">Empty name!</Label>
+            </VBox>
+
         </HBox>
 
     </top>
@@ -31,10 +35,22 @@
         <BorderPane id="roomHbox">
             <left>
                 <VBox id="roomVbox">
-                    <TextField styleClass="roomTextField" promptText="Surface"/>
-                    <TextField styleClass="roomTextField" promptText="Cubature"/>
-                    <TextField styleClass="roomTextField" promptText="Wattage"/>
-                    <TextField styleClass="roomTextField" promptText="Heating"/>
+                    <VBox fx:id="surface">
+                        <TextField styleClass="roomTextField" promptText="Surface" fx:id="surText"/>
+                        <Label styleClass="goodLabel">Must be a number!</Label>
+                    </VBox>
+                    <VBox fx:id="cubature">
+                        <TextField styleClass="roomTextField" promptText="Cubature" fx:id="cubText"/>
+                        <Label styleClass="goodLabel">Must be a number!</Label>
+                    </VBox>
+                    <VBox fx:id="wattage">
+                        <TextField styleClass="roomTextField" promptText="Wattage" fx:id="watText"/>
+                        <Label styleClass="goodLabel">Must be a number!</Label>
+                    </VBox>
+                    <VBox fx:id="heating">
+                        <TextField styleClass="roomTextField" promptText="Heating" fx:id="heaText"/>
+                        <Label styleClass="goodLabel">Must be a number!</Label>
+                    </VBox>
                 </VBox>
             </left>
             <right>
@@ -48,7 +64,7 @@
     <bottom>
         <BorderPane>
             <right>
-                <Button id="uploadButton">Save</Button>
+                <Button id="uploadButton" onAction="#save">Save</Button>
             </right>
         </BorderPane>
     </bottom>
