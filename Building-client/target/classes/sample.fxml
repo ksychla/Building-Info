@@ -5,8 +5,7 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
-<BorderPane fx:controller="sample.Controller"
-            xmlns:fx="http://javafx.com/fxml" stylesheets="style.css" fx:id="borderP"
+<BorderPane xmlns:fx="http://javafx.com/fxml" stylesheets="style.css" fx:id="borderP"
             id="roomBorderP">
 
     <top><Label id="title">BuildingInfo</Label></top>

@@ -10,7 +10,6 @@
 <?import javafx.scene.image.Image?>
 <BorderPane xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
-            fx:controller="sample.addFloor"
             fx:id="borderP"
             id="roomBorderP"
             stylesheets="style.css">
@@ -28,14 +27,14 @@
 
     </top>
     <center>
-        <HBox>
+        <HBox fx:id="floorHbox" styleClass="buttonsHbox">
             <Button id="plus" onAction="#plusButton">PLUS</Button>
         </HBox>
     </center>
     <bottom>
         <BorderPane>
             <right>
-                <Button id="uploadButton">Save</Button>
+                <Button id="uploadButton" onAction="#save">Save</Button>
             </right>
         </BorderPane>
     </bottom>

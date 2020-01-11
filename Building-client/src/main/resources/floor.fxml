@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            stylesheets="style.css"
+            fx:id="borderP"
+            id="roomBorderP">
+    <top>
+        <HBox style="-fx-spacing: 20px; -fx-alignment: center-left;">
+            <Button id="arrow" onAction="#returnTo">
+                <graphic>
+                    <ImageView>
+                        <Image url="img/arrow.png" requestedWidth="40.0" preserveRatio="true"/>
+                    </ImageView>
+                </graphic>
+            </Button>
+            <Label id="title" fx:id="floorLabel"/>
+        </HBox>
+    </top>
+    <center>
+        <BorderPane>
+            <top>
+                <HBox style="-fx-alignment: center; -fx-spacing: 20px;">
+                    <Label styleClass="feature">Surface: </Label>
+                    <Label styleClass="feature" fx:id="surfaceLabel"/>
+                    <Label styleClass="feature">Cubature: </Label>
+                    <Label styleClass="feature" fx:id="cubatureLabel"/>
+                    <Label styleClass="feature">Heating: </Label>
+                    <Label styleClass="feature" fx:id="heatingLabel"/>
+                    <Label styleClass="feature">Wattage: </Label>
+                    <Label styleClass="feature" fx:id="wattageLabel"/>
+                </HBox>
+            </top>
+            <center>
+                <HBox fx:id="roomHBox" styleClass="buttonsHbox"/>
+            </center>
+        </BorderPane>
+    </center>
+
+</BorderPane>

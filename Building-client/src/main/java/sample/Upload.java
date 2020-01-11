@@ -29,6 +29,6 @@ public class Upload {
     }
 
     public void returnTo() {
-        Main.changeSceneTo(uploadBorder, "/sample.fxml");
+        Main.changeSceneTo(new Controller(), uploadBorder, "/sample.fxml");
     }
 }
