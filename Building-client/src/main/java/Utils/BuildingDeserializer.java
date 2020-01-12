@@ -34,7 +34,7 @@ public class BuildingDeserializer implements JsonDeserializer<BuildingComponent>
                 JsonObject room = temp_pokoj.getAsJsonObject();
                 pietro.AddChild(new Room(room.get("idx").getAsInt(), room.get("name").getAsString(),
                         room.get("surface").getAsFloat(), room.get("lampWattage").getAsInt(),
-                        room.get("cubature").getAsInt()));
+                        room.get("cubature").getAsInt(), room.get("heating").getAsFloat()));
             }
             budynek.AddChild(pietro);
 

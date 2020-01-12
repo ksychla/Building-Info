@@ -47,8 +47,7 @@
 #plus{
     -fx-min-width: 100px;
     -fx-min-height: 100px;
-    -fx-border-style: dashed;
-    -fx-border-width: 3px;
+    -fx-border-width: 2px;
     -fx-border-color: #909090;
     -fx-background-color: none;
 }
@@ -119,4 +118,38 @@
 .wrongLabel{
     -fx-text-fill: #ff0000;
     -fx-font-size: 15px;
+}
+
+.goodLabel2{
+    -fx-text-fill: #909090;
+    -fx-font-size: 15px;
+}
+
+.element{
+    -fx-min-width: 100px;
+    -fx-min-height: 100px;
+    -fx-background-color: #909090;
+}
+
+.element:hover{
+    -fx-cursor: hand;
+}
+
+.buttonsHbox{
+    -fx-spacing: 20px;
+    -fx-padding: 20px;
+}
+
+.feature{
+    -fx-font-size: 20px;
+    -fx-text-fill: #909090;
+}
+
+.plusButton{
+    -fx-background-color: none;
+}
+
+.plusButton:hover{
+    -fx-cursor: hand;
+    -fx-opacity: 0.7;
 }

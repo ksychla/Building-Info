@@ -15,7 +15,9 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("/sample.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/sample.fxml"));
+        loader.setController(new Controller());
+        Parent root  = loader.load();
         primaryStage.setTitle("Building Info");
         Rectangle2D primaryScreenBounds = Screen.getPrimary().getVisualBounds();
         double width = primaryScreenBounds.getWidth() * 0.85;
@@ -24,10 +26,12 @@ public class Main extends Application {
         primaryStage.show();
     }
 
-    public static void changeSceneTo(BorderPane borderP, String file){    // TODO: Change to static method somewhere
+    public static void changeSceneTo(Object controller, BorderPane borderP, String file){
         Stage stage = (Stage) borderP.getScene().getWindow();
         try{
-            Parent root = FXMLLoader.load(Main.class.getResource(file));
+            FXMLLoader loader = new FXMLLoader(Main.class.getResource(file));
+            loader.setController(controller);
+            Parent root = loader.load();
             double width = borderP.getWidth();
             double height = borderP.getHeight();
             Scene scene = new Scene(root, width, height);

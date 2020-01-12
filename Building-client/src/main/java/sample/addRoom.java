@@ -1,5 +1,6 @@
 package sample;
 
+import Building_Info.Room;
 import javafx.fxml.FXML;
 import javafx.geometry.Rectangle2D;
 import javafx.scene.control.TextField;
@@ -50,7 +51,14 @@ public class addRoom {
 
     @FXML
     public void returnTo(){
-        Main.changeSceneTo(borderP, "/addFloor.fxml");
+        Main.changeSceneTo(floor, borderP, "/addFloor.fxml");
+    }
+
+    private addFloor floor;
+    private Room room;
+
+    public addRoom(addFloor floor){
+        this.floor = floor;
     }
 
     @FXML
@@ -78,32 +86,37 @@ public class addRoom {
         field.getChildren().get(1).getStyleClass().add("goodLabel");
     }
 
+    private boolean isExit(VBox vbox, TextField textField, boolean exit){
+        if(isNumber(textField.getText())){
+            wrong(vbox);
+            return true;
+        }else{
+            right(vbox);
+        }
+        return exit;
+    }
+
     @FXML
     public void save(){
-        if(nameText.getText().isEmpty()){
+        boolean exit = false;
+        if(nameText.getText().isEmpty()){   // TODO: extract to method
+            exit = true;
             wrong(name);
         }else{
             right(name);
         }
-        if(isNumber(surText.getText())){
-            wrong(surface);
-        }else{
-            right(surface);
-        }
-        if(isNumber(cubText.getText())){
-            wrong(cubature);
-        }else{
-            right(cubature);
-        }
-        if(isNumber(watText.getText())){
-            wrong(wattage);
-        }else{
-            right(wattage);
-        }
-        if(isNumber(heaText.getText())){
-            wrong(heating);
-        }else{
-            right(heating);
-        }
+        exit = isExit(surface, surText, exit);
+        exit = isExit(cubature, cubText, exit);
+        exit = isExit(wattage, watText, exit);
+        exit = isExit(heating, heaText, exit);
+        if(exit)
+            return;
+        floor.getFloor().AddChild(new Room(floor.getIdx(),
+                nameText.getText(),
+                Float.parseFloat(surText.getText()),
+                Integer.parseInt(watText.getText()),
+                Float.parseFloat(cubText.getText()),
+                Float.parseFloat(heaText.getText())));
+        returnTo();
     }
 }

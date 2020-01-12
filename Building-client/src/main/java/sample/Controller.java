@@ -14,11 +14,11 @@ public class Controller {
     public BorderPane borderP;
 
     @FXML
-    public void createButton(){ Main.changeSceneTo(borderP, "/create.fxml"); }
+    public void createButton(){ Main.changeSceneTo(new Create(), borderP, "/create.fxml"); }
 
     @FXML
-    public void uploadButton(){ Main.changeSceneTo(borderP, "/upload.fxml"); }
+    public void uploadButton(){ Main.changeSceneTo(new Upload(), borderP, "/upload.fxml"); }
 
     @FXML
-    public void evaluateButton(){ Main.changeSceneTo(borderP, "/evaluate.fxml"); }
+    public void evaluateButton(){ Main.changeSceneTo(new Evaluate(), borderP, "/evaluate.fxml"); }
 }

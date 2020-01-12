@@ -1,0 +1,50 @@
+{
+  "buildingComponents": [
+    {
+      "buildingComponents": [
+        {
+          "surface": 12.0,
+          "lampWattage": 14,
+          "cubature": 13.0,
+          "heating": 15.0,
+          "idx": 3,
+          "name": "room 1"
+        },
+        {
+          "surface": 13.0,
+          "lampWattage": 22,
+          "cubature": 21.0,
+          "heating": 13.0,
+          "idx": 4,
+          "name": "room 2"
+        }
+      ],
+      "idx": 2,
+      "name": "floor 1"
+    },
+    {
+      "buildingComponents": [
+        {
+          "surface": 14.0,
+          "lampWattage": 20,
+          "cubature": 15.0,
+          "heating": 21.0,
+          "idx": 6,
+          "name": "room 1"
+        },
+        {
+          "surface": 13.0,
+          "lampWattage": 21,
+          "cubature": 16.0,
+          "heating": 22.0,
+          "idx": 7,
+          "name": "room 2"
+        }
+      ],
+      "idx": 5,
+      "name": "floor 2"
+    }
+  ],
+  "idx": 1,
+  "name": "Building1"
+}
