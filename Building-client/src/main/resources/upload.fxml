@@ -32,7 +32,9 @@
             </ImageView>
 
             <VBox id="uploadFiles">
-                <Label>PLUS</Label>
+                <ImageView>
+                    <Image url="img/plus.png" requestedWidth="200.0" preserveRatio="true"/>
+                </ImageView>
                 <Button id="uploadButton">Upload</Button>
             </VBox>
         </HBox>

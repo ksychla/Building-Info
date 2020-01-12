@@ -18,6 +18,8 @@ public class Evaluate {
     public void initialize(){
         File folder = new File("out/");
         for(File f : folder.listFiles()){
+            if(!f.getName().substring(f.getName().length()-5).equals(".json"))
+                continue;
             Button button = new Button(f.getName().substring(0, f.getName().length()-5));
             button.getStyleClass().add("buildingButton");
             button.setOnAction(e->gotoBuilding(f));

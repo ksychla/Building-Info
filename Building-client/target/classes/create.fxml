@@ -28,7 +28,13 @@
     </top>
     <center>
         <HBox fx:id="buildingHbox" styleClass="buttonsHbox">
-            <Button id="plus" onAction="#plusButton">PLUS</Button>
+            <Button id="plus" onAction="#plusButton">
+                <graphic>
+                    <ImageView>
+                        <Image url="img/plus.png" requestedWidth="50.0" preserveRatio="true"/>
+                    </ImageView>
+                </graphic>
+            </Button>
         </HBox>
     </center>
     <bottom>

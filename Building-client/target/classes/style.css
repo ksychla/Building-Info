@@ -47,8 +47,7 @@
 #plus{
     -fx-min-width: 100px;
     -fx-min-height: 100px;
-    -fx-border-style: dashed;
-    -fx-border-width: 3px;
+    -fx-border-width: 2px;
     -fx-border-color: #909090;
     -fx-background-color: none;
 }
