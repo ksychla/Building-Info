@@ -25,12 +25,12 @@ public class RestHandling extends HttpServlet {
      * @param string plik json w postaci ciagu znaków otrzymany przez metodę GET
      * @return  Status wykonanej operacji
      */
-    @GET
+    @POST
     @Path("surface")
     public Response getSurfaceBuilding(String string){
         try{
             File file = jsonParser.saveFromString(string);
-            BuildingComponent building = jsonParser.loadJson(file.getName());
+            BuildingComponent building = jsonParser.loadJson("out/" + file.getName());
             return Response.ok(building.GetSurface()).build();
         }catch (Exception e){
             e.printStackTrace();
@@ -44,12 +44,12 @@ public class RestHandling extends HttpServlet {
      * @param string plik json w postaci ciagu znaków otrzymany przez metodę GET
      * @return Status wykonanej operacji
      */
-    @GET
+    @POST
     @Path("cubature")
     public Response getCubatureBuilding(String string){
         try{
             File file = jsonParser.saveFromString(string);
-            BuildingComponent building = jsonParser.loadJson(file.getName());
+            BuildingComponent building = jsonParser.loadJson("out/" + file.getName());
             return Response.ok(building.GetCubature()).build();
         }catch (Exception e){
             e.printStackTrace();
@@ -63,12 +63,12 @@ public class RestHandling extends HttpServlet {
      * @param string plik json w postaci ciagu znaków otrzymany przez metodę GET
      * @return Status wykonanej operacji
      */
-    @GET
+    @POST
     @Path("heating")
     public Response getHeatingBuilding(String string){
         try{
             File file = jsonParser.saveFromString(string);
-            BuildingComponent building = jsonParser.loadJson(file.getName());
+            BuildingComponent building = jsonParser.loadJson("out/" + file.getName());
             return Response.ok(building.GetHeating()).build();
         }catch (Exception e){
             e.printStackTrace();
@@ -82,12 +82,12 @@ public class RestHandling extends HttpServlet {
      * @param string plik json w postaci ciagu znaków otrzymany przez metodę GET
      * @return Status wykonanej operacji
      */
-    @GET
+    @POST
     @Path("wattage")
     public Response getLampWattageBuilding(String string){
         try{
             File file = jsonParser.saveFromString(string);
-            BuildingComponent building = jsonParser.loadJson(file.getName());
+            BuildingComponent building = jsonParser.loadJson("out/" + file.getName());
             return Response.ok(building.GetLampWattage()).build();
         }catch (Exception e){
             e.printStackTrace();
@@ -102,12 +102,12 @@ public class RestHandling extends HttpServlet {
      * @param floor numer identyfikujący piętro
      * @return Status wykonanej operacji
      */
-    @GET
+    @POST
     @Path("floor/{floor}/surface")
     public Response getSurfaceFloor(String string, @PathParam("floor") int floor){
         try {
             File file = jsonParser.saveFromString(string);
-            BuildingComposite building = (BuildingComposite) jsonParser.loadJson(file.getName());
+            BuildingComposite building = (BuildingComposite) jsonParser.loadJson("out/" + file.getName());
             BuildingComponent f = building.getComponentById(floor);
             return Response.ok(String.valueOf(f.GetSurface())).build();
         }catch(Exception e){
@@ -122,12 +122,12 @@ public class RestHandling extends HttpServlet {
      * @param floor numer identyfikujący piętro
      * @return Status wykonanej operacji
      */
-    @GET
+    @POST
     @Path("floor/{floor}/cubature")
     public Response getCubatureFloor(String string, @PathParam("floor") int floor){
         try {
             File file = jsonParser.saveFromString(string);
-            BuildingComposite building = (BuildingComposite) jsonParser.loadJson(file.getName());
+            BuildingComposite building = (BuildingComposite) jsonParser.loadJson("out/" + file.getName());
             BuildingComponent f = building.getComponentById(floor);
             return Response.ok(String.valueOf(f.GetCubature())).build();
         }catch (Exception e){
@@ -142,12 +142,12 @@ public class RestHandling extends HttpServlet {
      * @param floor numer identyfikujący piętro
      * @return Status wykonanej operacji
      */
-    @GET
+    @POST
     @Path("floor/{floor}/heating")
     public Response getHeatingFloor(String string, @PathParam("floor") int floor){
         try {
             File file = jsonParser.saveFromString(string);
-            BuildingComposite building = (BuildingComposite) jsonParser.loadJson(file.getName());
+            BuildingComposite building = (BuildingComposite) jsonParser.loadJson("out/" + file.getName());
             BuildingComponent f = building.getComponentById(floor);
             return Response.ok(String.valueOf(f.GetHeating())).build();
         }catch (Exception e){
@@ -162,12 +162,12 @@ public class RestHandling extends HttpServlet {
      * @param floor numer identyfikujący piętro
      * @return Status wykonanej operacji
      */
-    @GET
+    @POST
     @Path("floor/{floor}/wattage")
     public Response getLampWattageFloor(String string, @PathParam("floor") int floor){
         try {
             File file = jsonParser.saveFromString(string);
-            BuildingComposite building = (BuildingComposite) jsonParser.loadJson(file.getName());
+            BuildingComposite building = (BuildingComposite) jsonParser.loadJson("out/" + file.getName());
             BuildingComponent f = building.getComponentById(floor);
             return Response.ok(String.valueOf(f.GetLampWattage())).build();
         }catch (Exception e){
@@ -183,12 +183,12 @@ public class RestHandling extends HttpServlet {
      * @param room numer identyfikujący pokój
      * @return Status wykonanej operacji
      */
-    @GET
+    @POST
     @Path("floor/{floor}/room/{room}/surface")
     public Response getSurfaceRoom(String string, @PathParam("floor") int floor, @PathParam("room") int room){
         try {
             File file = jsonParser.saveFromString(string);
-            BuildingComposite building = (BuildingComposite) jsonParser.loadJson(file.getName());
+            BuildingComposite building = (BuildingComposite) jsonParser.loadJson("out/" + file.getName());
             BuildingComposite f = (BuildingComposite) building.getComponentById(floor);
             BuildingComponent r = f.getComponentById(room);
             return Response.ok(String.valueOf(r.GetSurface())).build();
@@ -206,12 +206,12 @@ public class RestHandling extends HttpServlet {
      * @param room numer identyfikujący pokój
      * @return Status wykonanej operacji
      */
-    @GET
+    @POST
     @Path("floor/{floor}/room/{room}/cubature")
     public Response getCubatureRoom(String string, @PathParam("floor") int floor, @PathParam("room") int room){
         try {
             File file = jsonParser.saveFromString(string);
-            BuildingComposite building = (BuildingComposite) jsonParser.loadJson(file.getName());
+            BuildingComposite building = (BuildingComposite) jsonParser.loadJson("out/" + file.getName());
             BuildingComposite f = (BuildingComposite) building.getComponentById(floor);
             BuildingComponent r = f.getComponentById(room);
             return Response.ok(String.valueOf(r.GetCubature())).build();
@@ -228,12 +228,12 @@ public class RestHandling extends HttpServlet {
      * @param room numer identyfikujący pokój
      * @return Status wykonanej operacji
      */
-    @GET
+    @POST
     @Path("floor/{floor}/room/{room}/heating")
     public Response getHeatingRoom(String string, @PathParam("floor") int floor, @PathParam("room") int room){
         try {
             File file = jsonParser.saveFromString(string);
-            BuildingComposite building = (BuildingComposite) jsonParser.loadJson(file.getName());
+            BuildingComposite building = (BuildingComposite) jsonParser.loadJson("out/" + file.getName());
             BuildingComposite f = (BuildingComposite) building.getComponentById(floor);
             BuildingComponent r = f.getComponentById(room);
             return Response.ok(String.valueOf(r.GetHeating())).build();
@@ -250,12 +250,12 @@ public class RestHandling extends HttpServlet {
      * @param room numer identyfikujący pokój
      * @return Status wykonanej operacji
      */
-    @GET
+    @POST
     @Path("floor/{floor}/room/{room}/wattage")
     public Response getLampWattageRoom(String string, @PathParam("floor") int floor, @PathParam("room") int room){
         try {
             File file = jsonParser.saveFromString(string);
-            BuildingComposite building = (BuildingComposite) jsonParser.loadJson(file.getName());
+            BuildingComposite building = (BuildingComposite) jsonParser.loadJson("out/" + file.getName());
             BuildingComposite f = (BuildingComposite) building.getComponentById(floor);
             BuildingComponent r = f.getComponentById(room);
             return Response.ok(String.valueOf(r.GetLampWattage())).build();

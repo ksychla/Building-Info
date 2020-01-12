@@ -9,6 +9,8 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 
+import okhttp3.*;
+
 import java.io.IOException;
 
 public class Building {
@@ -62,25 +64,34 @@ public class Building {
 
     public String getFeature(String which, Integer floorIdx, Integer roomIdx) throws IOException {
         String buildingJson = jsonParser.getStringFromJson(buildingName+".json");
-        String value = "";  // TODO: Call REST to get values
-        String unit;
-        switch (which){
-            case "surface":
-                unit = "m^2";
-                break;
-            case "cubature":
-                unit = "m^3";
-                break;
-            case "wattage":
-                unit = "W";
-                break;
-            case "heating":
-                unit = "J";
-                break;
-            default:
-                unit = "";
-                break;
+        MediaType JSON = MediaType.parse("application/json; charset=utf-8");
+        RequestBody body = RequestBody.create(JSON, buildingJson);
+        String url = "http:/127.0.0.1:8080/building";
+        if(floorIdx != null)
+        {
+            url +=("/floor/" + floorIdx);
+            if(roomIdx != null)
+            {
+                url +=("/room/" + roomIdx);
+            }
         }
-        return value + unit;
+        url += ("/" + which);
+
+        Request request = new Request.Builder()
+                .url(url)
+                .post(body)
+                .build();
+
+        OkHttpClient httpClient = new OkHttpClient();
+        try (Response response = httpClient.newCall(request).execute()) {
+
+            if (!response.isSuccessful()) throw new IOException("Unexpected code " + response);
+
+            return response.body().string();
+        }
+        catch(Exception ignored)
+        {
+            return "<error-occured>";
+        }
     }
 }
