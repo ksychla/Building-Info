@@ -10,7 +10,7 @@ public class RoomTest {
 
 @Before
 public void setup(){
-    room = new Room(1, "Sleeproom", 10, 3,25);
+    room = new Room(1, "Sleeproom", 10, 3,25, 10);
 }
 
     @Test
@@ -30,7 +30,7 @@ public void setup(){
 
     @Test
     public void getHeating() {
-    assertEquals(0, room.GetHeating(), 0.001);
+    assertEquals(10, room.GetHeating(), 0.001);
     }
 
     @Test
@@ -40,7 +40,7 @@ public void setup(){
 
     @Test
     public void heatPerMeter3() {
-    assertEquals(0, room.HeatPerMeter3(), 0.001);
+    assertEquals(0.4, room.HeatPerMeter3(), 0.001);
     }
 
     @Test
