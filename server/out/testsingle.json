@@ -1,0 +1,20 @@
+{
+  "buildingComponents": [
+    {
+      "buildingComponents": [
+        {
+          "surface": 25.0,
+          "lampWattage": 10,
+          "cubature": 10.0,
+          "heating": 0.0,
+          "idx": 4,
+          "name": "Poko1"
+        }
+      ],
+      "idx": 2,
+      "name": "Pietro1"
+    }
+  ],
+  "idx": 1,
+  "name": "BudynekTestowy"
+}
