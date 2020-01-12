@@ -42,4 +42,7 @@ public void setup(){
     public void heatPerMeter3() {
     assertEquals(0.4, room.HeatPerMeter3(), 0.001);
     }
+
+    @Test
+    public void getInfo() { assertEquals("No. 1 name Sleeproom surface 10.0 cubature 25.0 lampWattage 3", room.GetInfo());}
 }
