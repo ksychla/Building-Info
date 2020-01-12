@@ -18,12 +18,12 @@ public class Room extends BuildingComponent{
      * @param lampWattage Moc oświetlenia
      * @param cubature Objętość
      */
-    public Room(int idx, String name, float surface, int lampWattage, float cubature) {
+    public Room(int idx, String name, float surface, int lampWattage, float cubature, float heating) {
         super(idx, name);
         this.surface = surface;
         this.lampWattage = lampWattage;
         this.cubature = cubature;
-        this.heating=0; //next step: set heating
+        this.heating = heating;
     }
 
 
