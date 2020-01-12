@@ -16,7 +16,7 @@ public class BuildingCompositeTest {
     @Before
     public void setup(){
         parser = new JsonParser();
-        bigBuildingComposite = ((BuildingComposite)(parser.loadJson("test.json")));
+        bigBuildingComposite = ((BuildingComposite)(parser.loadJson("out/test.json")));
         Room mockObject = mock(Room.class);
         when(mockObject.GetSurface()).thenReturn((float) 10);
         when(mockObject.GetLampWattage()).thenReturn(3);
@@ -68,7 +68,7 @@ public class BuildingCompositeTest {
 
     @Test
     public void usesMoreHeatTrue(){
-        assertEquals("Id Name\n", buildingComposite.UsesMoreHeatThan(-1));
+        assertEquals("Id Name\n0 null\n", buildingComposite.UsesMoreHeatThan(-1));
     }
 
     @Test

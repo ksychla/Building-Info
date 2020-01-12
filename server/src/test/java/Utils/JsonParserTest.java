@@ -133,15 +133,15 @@ public class JsonParserTest {
         parser = new JsonParser();
     }
     @Test
-    public void loadJsonBuildingWithManyRooms() {assertEquals(80, parser.loadJson("test.json").GetSurface(), 0.001); }
+    public void loadJsonBuildingWithManyRooms() {assertEquals(80, parser.loadJson("out/test.json").GetSurface(), 0.001); }
 
     @Test
-    public void loadJsonBarrenBuilding() {assertEquals(25, parser.loadJson("testsingle.json").GetSurface(), 0.001); }
+    public void loadJsonBarrenBuilding() {assertEquals(25, parser.loadJson("out/testsingle.json").GetSurface(), 0.001); }
 
     @Test
     public void saveFromStringBuildingWithManyRooms() {
         try {
-            assertEquals(80, parser.loadJson(parser.saveFromString(testStringRich).getName()).GetSurface(), 0.001);
+            assertEquals(80, parser.loadJson("out/"+parser.saveFromString(testStringRich).getName()).GetSurface(), 0.001);
         }catch (IOException e){
             e.printStackTrace();
         }
@@ -150,7 +150,7 @@ public class JsonParserTest {
     @Test
     public void saveFromStringBarrenBuilding() {
         try {
-            assertEquals(25, parser.loadJson(parser.saveFromString(testStringBarren).getName()).GetSurface(), 0.001);
+            assertEquals(25, parser.loadJson("out/"+parser.saveFromString(testStringBarren).getName()).GetSurface(), 0.001);
         }catch (IOException e){
             e.printStackTrace();
         }
