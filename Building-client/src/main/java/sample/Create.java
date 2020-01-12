@@ -26,7 +26,7 @@ public class Create {
 
     public BuildingComposite getBuilding(){ return building; }
 
-    private int newIndex(){
+    public static int newIndex(){
         int num = 0;
         try{
             File file = null;

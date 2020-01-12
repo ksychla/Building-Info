@@ -32,10 +32,17 @@
             </ImageView>
 
             <VBox id="uploadFiles">
-                <ImageView>
-                    <Image url="img/plus.png" requestedWidth="200.0" preserveRatio="true"/>
-                </ImageView>
-                <Button id="uploadButton">Upload</Button>
+                <Button styleClass="plusButton" onAction="#addFile">
+                    <graphic>
+                        <ImageView>
+                            <Image url="img/plus.png" requestedWidth="100.0" preserveRatio="true"/>
+                        </ImageView>
+                    </graphic>
+                </Button>
+                <VBox style="-fx-spacing: 20px; -fx-alignment: center;">
+                    <Label fx:id="fileLabel"/>
+                    <Button id="uploadButton" onAction="#uploadFile">Upload</Button>
+                </VBox>
             </VBox>
         </HBox>
 

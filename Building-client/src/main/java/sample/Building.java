@@ -9,7 +9,6 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 
-import java.io.File;
 import java.io.IOException;
 
 public class Building {
@@ -26,11 +25,11 @@ public class Building {
     private String buildingName;
     private JsonParser jsonParser;
 
-    public Building(File file, Evaluate evaluate){
+    public Building(String file, Evaluate evaluate){
         this.evaluate = evaluate;
-        this.buildingName = file.getName().substring(0, file.getName().length()-5);
+        this.buildingName = file.substring(0, file.length()-5);
         jsonParser = new JsonParser();
-        building = (BuildingComposite) jsonParser.loadJson(file.getName());
+        building = (BuildingComposite) jsonParser.loadJson("out/"+file);
     }
 
     @FXML

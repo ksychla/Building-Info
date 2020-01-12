@@ -41,7 +41,7 @@ public class JsonParser {
         BuildingComponent building = null;
 
         try {
-            Reader jsonreader = new FileReader("out/"+json_name);
+            Reader jsonreader = new FileReader(json_name);
             building = gson.fromJson(jsonreader, BuildingComponent.class);
 
         } catch (FileNotFoundException e) {

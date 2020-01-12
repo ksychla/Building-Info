@@ -6,7 +6,7 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
 
 import java.io.File;
-import java.util.ArrayList;
+import java.util.Arrays;
 
 public class Evaluate {
     @FXML
@@ -17,17 +17,19 @@ public class Evaluate {
     @FXML
     public void initialize(){
         File folder = new File("out/");
-        for(File f : folder.listFiles()){
+        File[] files = folder.listFiles();
+        Arrays.sort(files);
+        for(File f : files){
             if(!f.getName().substring(f.getName().length()-5).equals(".json"))
                 continue;
             Button button = new Button(f.getName().substring(0, f.getName().length()-5));
             button.getStyleClass().add("buildingButton");
-            button.setOnAction(e->gotoBuilding(f));
+            button.setOnAction(e->gotoBuilding(f.getName()));
             buildingsVBox.getChildren().add(button);
         }
     }
 
-    public void gotoBuilding(File file){
+    public void gotoBuilding(String file){
         Main.changeSceneTo(new Building(file, this), borderP, "/building.fxml");
     }
 
