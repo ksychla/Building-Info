@@ -14,3 +14,5 @@ Graficzna aplikacja do zarządania budynkami, stworzona dla administratorów bud
 
 ## Dostęp do budynków
 ![evaluate](img/evaluate.png?raw=true "Evaluate")
+
+Większość grafik została pozyskana z https://www.freepik.com
