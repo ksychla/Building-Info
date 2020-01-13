@@ -1,1 +1,0 @@
-typeSearchIndex = [{"l":"All Classes","url":"allclasses-index.html"},{"p":"Building_Info","l":"BuildingBuilder"},{"p":"Building_Info","l":"BuildingComponent"},{"p":"Building_Info","l":"BuildingComposite"},{"p":"Utils","l":"BuildingDeserializer"},{"p":"Utils","l":"JsonParser"},{"p":"<Unnamed>","l":"Main"},{"p":"RestApi","l":"RestHandling"},{"p":"Building_Info","l":"Room"}]
