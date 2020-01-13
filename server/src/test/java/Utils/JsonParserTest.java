@@ -143,7 +143,7 @@ public class JsonParserTest {
         try {
             assertEquals(80, parser.loadJson("out/"+parser.saveFromString(testStringRich).getName()).GetSurface(), 0.001);
         }catch (IOException e){
-            e.printStackTrace();
+//            e.printStackTrace();
         }
     }
 
@@ -152,7 +152,7 @@ public class JsonParserTest {
         try {
             assertEquals(25, parser.loadJson("out/"+parser.saveFromString(testStringBarren).getName()).GetSurface(), 0.001);
         }catch (IOException e){
-            e.printStackTrace();
+//            e.printStackTrace();
         }
     }
 
@@ -161,7 +161,7 @@ public class JsonParserTest {
         try {
             assertEquals(testStringRich, parser.getStringFromJson("test.json"));
         }catch (IOException e){
-            e.printStackTrace();
+//            e.printStackTrace();
         }
     }
 
@@ -170,7 +170,7 @@ public class JsonParserTest {
         try {
             assertEquals(testStringBarren, parser.getStringFromJson("testsingle.json"));
         }catch (IOException e){
-            e.printStackTrace();
+//            e.printStackTrace();
         }
     }
 }

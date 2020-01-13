@@ -1,16 +1,16 @@
-/home/dominik/Projekty/Web-Services/Building-Info/Building-client/src/main/java/Building_Info/Room.java
-/home/dominik/Projekty/Web-Services/Building-Info/Building-client/src/main/java/sample/addRoom.java
-/home/dominik/Projekty/Web-Services/Building-Info/Building-client/src/main/java/Building_Info/BuildingBuilder.java
-/home/dominik/Projekty/Web-Services/Building-Info/Building-client/src/main/java/sample/Upload.java
-/home/dominik/Projekty/Web-Services/Building-Info/Building-client/src/main/java/sample/Building.java
-/home/dominik/Projekty/Web-Services/Building-Info/Building-client/src/main/java/sample/Main.java
-/home/dominik/Projekty/Web-Services/Building-Info/Building-client/src/main/java/sample/RoomInfo.java
-/home/dominik/Projekty/Web-Services/Building-Info/Building-client/src/main/java/sample/Floor.java
-/home/dominik/Projekty/Web-Services/Building-Info/Building-client/src/main/java/sample/Controller.java
-/home/dominik/Projekty/Web-Services/Building-Info/Building-client/src/main/java/sample/Create.java
-/home/dominik/Projekty/Web-Services/Building-Info/Building-client/src/main/java/sample/addFloor.java
-/home/dominik/Projekty/Web-Services/Building-Info/Building-client/src/main/java/Utils/JsonParser.java
-/home/dominik/Projekty/Web-Services/Building-Info/Building-client/src/main/java/Building_Info/BuildingComposite.java
-/home/dominik/Projekty/Web-Services/Building-Info/Building-client/src/main/java/Building_Info/BuildingComponent.java
-/home/dominik/Projekty/Web-Services/Building-Info/Building-client/src/main/java/sample/Evaluate.java
-/home/dominik/Projekty/Web-Services/Building-Info/Building-client/src/main/java/Utils/BuildingDeserializer.java
+/Users/krzysztof/Documents/Studia/semestr 5/IO/Building-Info/Building-client/src/main/java/sample/Building.java
+/Users/krzysztof/Documents/Studia/semestr 5/IO/Building-Info/Building-client/src/main/java/sample/addFloor.java
+/Users/krzysztof/Documents/Studia/semestr 5/IO/Building-Info/Building-client/src/main/java/Building_Info/BuildingBuilder.java
+/Users/krzysztof/Documents/Studia/semestr 5/IO/Building-Info/Building-client/src/main/java/Building_Info/BuildingComponent.java
+/Users/krzysztof/Documents/Studia/semestr 5/IO/Building-Info/Building-client/src/main/java/Utils/JsonParser.java
+/Users/krzysztof/Documents/Studia/semestr 5/IO/Building-Info/Building-client/src/main/java/Building_Info/BuildingComposite.java
+/Users/krzysztof/Documents/Studia/semestr 5/IO/Building-Info/Building-client/src/main/java/sample/Floor.java
+/Users/krzysztof/Documents/Studia/semestr 5/IO/Building-Info/Building-client/src/main/java/sample/RoomInfo.java
+/Users/krzysztof/Documents/Studia/semestr 5/IO/Building-Info/Building-client/src/main/java/sample/Controller.java
+/Users/krzysztof/Documents/Studia/semestr 5/IO/Building-Info/Building-client/src/main/java/sample/Main.java
+/Users/krzysztof/Documents/Studia/semestr 5/IO/Building-Info/Building-client/src/main/java/sample/addRoom.java
+/Users/krzysztof/Documents/Studia/semestr 5/IO/Building-Info/Building-client/src/main/java/Building_Info/Room.java
+/Users/krzysztof/Documents/Studia/semestr 5/IO/Building-Info/Building-client/src/main/java/Utils/BuildingDeserializer.java
+/Users/krzysztof/Documents/Studia/semestr 5/IO/Building-Info/Building-client/src/main/java/sample/Evaluate.java
+/Users/krzysztof/Documents/Studia/semestr 5/IO/Building-Info/Building-client/src/main/java/sample/Upload.java
+/Users/krzysztof/Documents/Studia/semestr 5/IO/Building-Info/Building-client/src/main/java/sample/Create.java

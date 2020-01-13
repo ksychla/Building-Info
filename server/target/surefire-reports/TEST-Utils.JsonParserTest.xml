@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="12" failures="0" name="RestApi.RestHandlingTest" time="0.001" errors="0" skipped="0">
+<testsuite tests="6" failures="0" name="Utils.JsonParserTest" time="0.037" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="java.vm.version" value="11.0.5+10-LTS"/>
@@ -64,16 +64,10 @@
     <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase classname="RestApi.RestHandlingTest" name="getSurfaceRoom" time="0"/>
-  <testcase classname="RestApi.RestHandlingTest" name="getLampWattageFloor" time="0"/>
-  <testcase classname="RestApi.RestHandlingTest" name="getHeatingBuilding" time="0"/>
-  <testcase classname="RestApi.RestHandlingTest" name="getSurfaceBuilding" time="0.001"/>
-  <testcase classname="RestApi.RestHandlingTest" name="getCubatureFloor" time="0"/>
-  <testcase classname="RestApi.RestHandlingTest" name="getHeatingFloor" time="0"/>
-  <testcase classname="RestApi.RestHandlingTest" name="getCubatureRoom" time="0"/>
-  <testcase classname="RestApi.RestHandlingTest" name="getLampWattageBuilding" time="0"/>
-  <testcase classname="RestApi.RestHandlingTest" name="getSurfaceFloor" time="0"/>
-  <testcase classname="RestApi.RestHandlingTest" name="getCubatureBuilding" time="0"/>
-  <testcase classname="RestApi.RestHandlingTest" name="getHeatingRoom" time="0"/>
-  <testcase classname="RestApi.RestHandlingTest" name="getLampWattageRoom" time="0"/>
+  <testcase classname="Utils.JsonParserTest" name="saveFromStringBuildingWithManyRooms" time="0.007"/>
+  <testcase classname="Utils.JsonParserTest" name="saveFromStringBarrenBuilding" time="0.024"/>
+  <testcase classname="Utils.JsonParserTest" name="getStringFromJsonBarren" time="0.002"/>
+  <testcase classname="Utils.JsonParserTest" name="loadJsonBarrenBuilding" time="0.001"/>
+  <testcase classname="Utils.JsonParserTest" name="loadJsonBuildingWithManyRooms" time="0.002"/>
+  <testcase classname="Utils.JsonParserTest" name="getStringFromJsonRich" time="0.001"/>
 </testsuite>
