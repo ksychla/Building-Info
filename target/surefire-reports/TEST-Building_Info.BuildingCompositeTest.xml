@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="17" failures="0" name="Building_Info.BuildingCompositeTest" time="1.92" errors="17" skipped="0">
+<testsuite tests="17" failures="0" name="Building_Info.BuildingCompositeTest" time="1.571" errors="17" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="java.vm.version" value="11.0.5+10-LTS"/>
     <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/jdk-11.0.5.jdk/Contents/Home/lib"/>
     <property name="gopherProxySet" value="false"/>
-    <property name="maven.multiModuleProjectDirectory" value="/Users/krzysztof/Documents/Studia/semestr 5/IO/Building-Info/server"/>
+    <property name="maven.multiModuleProjectDirectory" value="/Users/krzysztof/Documents/Studia/semestr 5/IO/Building-Info"/>
     <property name="java.vm.vendor" value="Oracle Corporation"/>
     <property name="java.vendor.url" value="http://java.oracle.com/"/>
     <property name="guice.disable.misplaced.annotation.check" value="true"/>
@@ -15,7 +15,7 @@
     <property name="user.country" value="PL"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
-    <property name="user.dir" value="/Users/krzysztof/Documents/Studia/semestr 5/IO/Building-Info/server"/>
+    <property name="user.dir" value="/Users/krzysztof/Documents/Studia/semestr 5/IO/Building-Info"/>
     <property name="java.vm.compressedOopsMode" value="Zero based"/>
     <property name="java.runtime.version" value="11.0.5+10-LTS"/>
     <property name="java.awt.graphicsenv" value="sun.awt.CGraphicsEnvironment"/>
@@ -45,7 +45,7 @@
     <property name="java.class.path" value="/usr/local/Cellar/maven/3.6.2/libexec/boot/plexus-classworlds-2.6.0.jar"/>
     <property name="java.vm.specification.version" value="11"/>
     <property name="sun.arch.data.model" value="64"/>
-    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher package"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher test"/>
     <property name="java.home" value="/Library/Java/JavaVirtualMachines/jdk-11.0.5.jdk/Contents/Home"/>
     <property name="user.language" value="pl"/>
     <property name="java.specification.vendor" value="Oracle Corporation"/>
@@ -64,7 +64,7 @@
     <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase classname="Building_Info.BuildingCompositeTest" name="getCubature" time="1.1">
+  <testcase classname="Building_Info.BuildingCompositeTest" name="getCubature" time="0.694">
     <error message="
 Mockito cannot mock this class: class Building_Info.Room.
 
@@ -164,7 +164,7 @@ Caused by: java.lang.IllegalArgumentException: Unknown Java version: 11
 	... 47 more
 </error>
   </testcase>
-  <testcase classname="Building_Info.BuildingCompositeTest" name="usesMoreHeatTrue" time="0.088">
+  <testcase classname="Building_Info.BuildingCompositeTest" name="usesMoreHeatTrue" time="0.095">
     <error message="
 Mockito cannot mock this class: class Building_Info.Room.
 
@@ -264,7 +264,7 @@ Caused by: java.lang.IllegalArgumentException: Unknown Java version: 11
 	... 47 more
 </error>
   </testcase>
-  <testcase classname="Building_Info.BuildingCompositeTest" name="getChildCountMultiple" time="0.087">
+  <testcase classname="Building_Info.BuildingCompositeTest" name="getChildCountMultiple" time="0.074">
     <error message="
 Mockito cannot mock this class: class Building_Info.Room.
 
@@ -364,7 +364,7 @@ Caused by: java.lang.IllegalArgumentException: Unknown Java version: 11
 	... 47 more
 </error>
   </testcase>
-  <testcase classname="Building_Info.BuildingCompositeTest" name="getLampWattageMultiple" time="0.063">
+  <testcase classname="Building_Info.BuildingCompositeTest" name="getLampWattageMultiple" time="0.079">
     <error message="
 Mockito cannot mock this class: class Building_Info.Room.
 
@@ -464,7 +464,7 @@ Caused by: java.lang.IllegalArgumentException: Unknown Java version: 11
 	... 47 more
 </error>
   </testcase>
-  <testcase classname="Building_Info.BuildingCompositeTest" name="getCubatureMultiple" time="0.052">
+  <testcase classname="Building_Info.BuildingCompositeTest" name="getCubatureMultiple" time="0.064">
     <error message="
 Mockito cannot mock this class: class Building_Info.Room.
 
@@ -564,7 +564,7 @@ Caused by: java.lang.IllegalArgumentException: Unknown Java version: 11
 	... 47 more
 </error>
   </testcase>
-  <testcase classname="Building_Info.BuildingCompositeTest" name="getSurface" time="0.05">
+  <testcase classname="Building_Info.BuildingCompositeTest" name="getSurface" time="0.055">
     <error message="
 Mockito cannot mock this class: class Building_Info.Room.
 
@@ -664,7 +664,7 @@ Caused by: java.lang.IllegalArgumentException: Unknown Java version: 11
 	... 47 more
 </error>
   </testcase>
-  <testcase classname="Building_Info.BuildingCompositeTest" name="lampPerMeter2Multiple" time="0.061">
+  <testcase classname="Building_Info.BuildingCompositeTest" name="lampPerMeter2Multiple" time="0.064">
     <error message="
 Mockito cannot mock this class: class Building_Info.Room.
 
@@ -764,7 +764,7 @@ Caused by: java.lang.IllegalArgumentException: Unknown Java version: 11
 	... 47 more
 </error>
   </testcase>
-  <testcase classname="Building_Info.BuildingCompositeTest" name="lampPerMeter2" time="0.056">
+  <testcase classname="Building_Info.BuildingCompositeTest" name="lampPerMeter2" time="0.059">
     <error message="
 Mockito cannot mock this class: class Building_Info.Room.
 
@@ -864,7 +864,7 @@ Caused by: java.lang.IllegalArgumentException: Unknown Java version: 11
 	... 47 more
 </error>
   </testcase>
-  <testcase classname="Building_Info.BuildingCompositeTest" name="getHeatingMultiple" time="0.054">
+  <testcase classname="Building_Info.BuildingCompositeTest" name="getHeatingMultiple" time="0.05">
     <error message="
 Mockito cannot mock this class: class Building_Info.Room.
 
@@ -964,7 +964,7 @@ Caused by: java.lang.IllegalArgumentException: Unknown Java version: 11
 	... 47 more
 </error>
   </testcase>
-  <testcase classname="Building_Info.BuildingCompositeTest" name="getChildCount" time="0.04">
+  <testcase classname="Building_Info.BuildingCompositeTest" name="getChildCount" time="0.053">
     <error message="
 Mockito cannot mock this class: class Building_Info.Room.
 
@@ -1064,7 +1064,7 @@ Caused by: java.lang.IllegalArgumentException: Unknown Java version: 11
 	... 47 more
 </error>
   </testcase>
-  <testcase classname="Building_Info.BuildingCompositeTest" name="getSurfaceMultiple" time="0.046">
+  <testcase classname="Building_Info.BuildingCompositeTest" name="getSurfaceMultiple" time="0.048">
     <error message="
 Mockito cannot mock this class: class Building_Info.Room.
 
@@ -1264,7 +1264,7 @@ Caused by: java.lang.IllegalArgumentException: Unknown Java version: 11
 	... 47 more
 </error>
   </testcase>
-  <testcase classname="Building_Info.BuildingCompositeTest" name="getHeating" time="0.038">
+  <testcase classname="Building_Info.BuildingCompositeTest" name="getHeating" time="0.042">
     <error message="
 Mockito cannot mock this class: class Building_Info.Room.
 
@@ -1364,7 +1364,7 @@ Caused by: java.lang.IllegalArgumentException: Unknown Java version: 11
 	... 47 more
 </error>
   </testcase>
-  <testcase classname="Building_Info.BuildingCompositeTest" name="heatPerMeter3" time="0.037">
+  <testcase classname="Building_Info.BuildingCompositeTest" name="heatPerMeter3" time="0.034">
     <error message="
 Mockito cannot mock this class: class Building_Info.Room.
 
@@ -1464,7 +1464,7 @@ Caused by: java.lang.IllegalArgumentException: Unknown Java version: 11
 	... 47 more
 </error>
   </testcase>
-  <testcase classname="Building_Info.BuildingCompositeTest" name="getLampWattage" time="0.038">
+  <testcase classname="Building_Info.BuildingCompositeTest" name="getLampWattage" time="0.037">
     <error message="
 Mockito cannot mock this class: class Building_Info.Room.
 
@@ -1564,7 +1564,7 @@ Caused by: java.lang.IllegalArgumentException: Unknown Java version: 11
 	... 47 more
 </error>
   </testcase>
-  <testcase classname="Building_Info.BuildingCompositeTest" name="getLastChild" time="0.039">
+  <testcase classname="Building_Info.BuildingCompositeTest" name="getLastChild" time="0.052">
     <error message="
 Mockito cannot mock this class: class Building_Info.Room.
 

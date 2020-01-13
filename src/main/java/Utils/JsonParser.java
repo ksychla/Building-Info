@@ -70,7 +70,7 @@ public class JsonParser {
         OutputStream out = new FileOutputStream(file);
         out.write(json.getBytes());
         try {
-            BuildingComponent building = loadJson(num + ".json");
+            BuildingComponent building = loadJson("out/"+num + ".json");
         }catch (Exception e){
             file.delete();
             throw new IllegalStateException();

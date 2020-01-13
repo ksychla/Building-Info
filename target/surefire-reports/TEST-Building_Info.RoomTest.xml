@@ -5,7 +5,7 @@
     <property name="java.vm.version" value="11.0.5+10-LTS"/>
     <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/jdk-11.0.5.jdk/Contents/Home/lib"/>
     <property name="gopherProxySet" value="false"/>
-    <property name="maven.multiModuleProjectDirectory" value="/Users/krzysztof/Documents/Studia/semestr 5/IO/Building-Info/server"/>
+    <property name="maven.multiModuleProjectDirectory" value="/Users/krzysztof/Documents/Studia/semestr 5/IO/Building-Info"/>
     <property name="java.vm.vendor" value="Oracle Corporation"/>
     <property name="java.vendor.url" value="http://java.oracle.com/"/>
     <property name="guice.disable.misplaced.annotation.check" value="true"/>
@@ -15,7 +15,7 @@
     <property name="user.country" value="PL"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
-    <property name="user.dir" value="/Users/krzysztof/Documents/Studia/semestr 5/IO/Building-Info/server"/>
+    <property name="user.dir" value="/Users/krzysztof/Documents/Studia/semestr 5/IO/Building-Info"/>
     <property name="java.vm.compressedOopsMode" value="Zero based"/>
     <property name="java.runtime.version" value="11.0.5+10-LTS"/>
     <property name="java.awt.graphicsenv" value="sun.awt.CGraphicsEnvironment"/>
@@ -45,7 +45,7 @@
     <property name="java.class.path" value="/usr/local/Cellar/maven/3.6.2/libexec/boot/plexus-classworlds-2.6.0.jar"/>
     <property name="java.vm.specification.version" value="11"/>
     <property name="sun.arch.data.model" value="64"/>
-    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher package"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher test"/>
     <property name="java.home" value="/Library/Java/JavaVirtualMachines/jdk-11.0.5.jdk/Contents/Home"/>
     <property name="user.language" value="pl"/>
     <property name="java.specification.vendor" value="Oracle Corporation"/>
@@ -64,9 +64,9 @@
     <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase classname="Building_Info.RoomTest" name="getCubature" time="0.004"/>
+  <testcase classname="Building_Info.RoomTest" name="getCubature" time="0.003"/>
   <testcase classname="Building_Info.RoomTest" name="getSurface" time="0"/>
-  <testcase classname="Building_Info.RoomTest" name="getInfo" time="0.003"/>
+  <testcase classname="Building_Info.RoomTest" name="getInfo" time="0.004"/>
   <testcase classname="Building_Info.RoomTest" name="lampPerMeter2" time="0"/>
   <testcase classname="Building_Info.RoomTest" name="getHeating" time="0"/>
   <testcase classname="Building_Info.RoomTest" name="heatPerMeter3" time="0"/>

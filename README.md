@@ -29,15 +29,27 @@ Adresy URI wykorzystywane do komunikacji z REST API
 127.0.0.1:8080/building/surface
 127.0.0.1:8080/building/cubature
 127.0.0.1:8080/building/heating
+127.0.0.1:8080/building/heating3
 127.0.0.1:8080/building/wattage
+127.0.0.1:8080/building/wattage2
 
 127.0.0.1:8080/building/floor/{id}/surface
 127.0.0.1:8080/building/floor/{id}/cubature
-127.0.0.1:8080/building/floor/{id}/heating 
+127.0.0.1:8080/building/floor/{id}/heating
+127.0.0.1:8080/building/floor/{id}/heating3  
 127.0.0.1:8080/building/floor/{id}/wattage 
+127.0.0.1:8080/building/floor/{id}/wattage2 
 
 127.0.0.1:8080/building/floor/{id}/room/{id}/surface
 127.0.0.1:8080/building/floor/{id}/room/{id}/cubature
 127.0.0.1:8080/building/floor/{id}/room/{id}/heating
+127.0.0.1:8080/building/floor/{id}/room/{id}/heating3
 127.0.0.1:8080/building/floor/{id}/room/{id}/wattage
+127.0.0.1:8080/building/floor/{id}/room/{id}/wattage2
+
+127.0.0.1:8080/building/more/{maxLevel}
 ```
+
+## Dokumentacja
+
+https://renegadewizard.github.io/Building-Info/javadoc/index.html
