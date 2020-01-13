@@ -41,9 +41,3 @@ Adresy URI wykorzystywane do komunikacji z REST API
 127.0.0.1:8080/building/floor/{id}/room/{id}/heating
 127.0.0.1:8080/building/floor/{id}/room/{id}/wattage
 ```
-
-## Struktura projektu
-![UML diagram](UMLdiagram.jpg?raw=true "UML")
-
-## Dokumentacja
-https://renegadewizard.github.io/Building-Info/
